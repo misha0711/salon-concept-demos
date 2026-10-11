@@ -20,11 +20,12 @@ body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);-webki
 a{color:inherit}img{max-width:100%;display:block}
 .wrap{max-width:1160px;margin:0 auto;padding-inline:24px}
 section{padding-block:var(--sp)}
-.progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--acc);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--acc);transform-origin:0 50%;transform:scaleX(0);z-index:90}
 header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{font:600 25px var(--serif);letter-spacing:.03em;text-decoration:none;white-space:nowrap}
-nav{display:flex;gap:26px;align-items:center;font-size:15px}
+.logo{font:600 25px var(--serif);letter-spacing:.03em;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:10px}
+.logo img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+nav{display:flex;gap:24px;align-items:center;font-size:15px}
 nav a.l{text-decoration:none;color:var(--mut)}nav a.l:hover{color:var(--ink)}
 .lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
 .lang button{all:unset;cursor:pointer;padding:5px 11px;font-size:13px;color:var(--mut)}
@@ -39,8 +40,8 @@ nav a.l{text-decoration:none;color:var(--mut)}nav a.l:hover{color:var(--ink)}
 h1{font:600 clamp(46px,7vw,88px)/1 var(--serif);margin:16px 0 20px;letter-spacing:-.01em}
 h2{font:600 clamp(34px,4.8vw,56px)/1.06 var(--serif);margin:10px 0 14px;letter-spacing:-.008em}
 .lead{font-size:19px;max-width:31em}
-.sub{color:var(--mut);max-width:36em}
-/* hero (brand colours) */
+.sub{color:var(--mut);max-width:38em}
+/* hero */
 .hero{background:var(--hbg);color:var(--hink);padding-block:56px 80px;min-height:calc(100svh - 64px);display:flex;align-items:center;position:relative;overflow:hidden}
 .hero .eyebrow{color:var(--hacc)}.hero .lead{color:var(--hmut)}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;width:100%;position:relative;z-index:1}
@@ -54,18 +55,21 @@ h2{font:600 clamp(34px,4.8vw,56px)/1.06 var(--serif);margin:10px 0 14px;letter-s
 .hero .btn.primary{background:var(--hacc);border-color:var(--hacc);color:var(--hbg)}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--line);border-radius:99px;font-size:14px;color:var(--mut)}
-.hero .chip{border-color:var(--hline,rgba(255,255,255,.25));color:var(--hmut);background:rgba(255,255,255,.06)}
+.hero .chip{border-color:rgba(255,255,255,.25);color:var(--hmut);background:rgba(255,255,255,.06)}
 .chip b{font:600 20px var(--serif);color:inherit}.chip .st{color:var(--acc);font-size:12px}
 .hero .chip .st{color:var(--hacc)}.hero .chip b{color:var(--hink)}
 .dot{width:9px;height:9px;border-radius:50%;background:#46c47a;animation:pulse 2s infinite}
 .dot.off{background:#d9705f;animation:none}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(70,196,122,.55)}70%{box-shadow:0 0 0 9px rgba(70,196,122,0)}100%{box-shadow:0 0 0 0 rgba(70,196,122,0)}}
 .heroart{position:relative}
-.art{aspect-ratio:4/5;border-radius:260px 260px 28px 28px;overflow:hidden;position:relative;background:var(--bg2);clip-path:inset(10% 8% 10% 8% round 260px 260px 28px 28px);animation:unclip 1.3s cubic-bezier(.2,.7,.1,1) .1s forwards;box-shadow:0 30px 80px rgba(0,0,0,.25)}
+.art{aspect-ratio:4/5;border-radius:260px 260px 28px 28px;overflow:hidden;position:relative;background:var(--bg2);clip-path:inset(10% 8% 10% 8% round 260px 260px 28px 28px);animation:unclip 1.3s cubic-bezier(.2,.7,.1,1) .1s forwards;box-shadow:0 30px 80px rgba(0,0,0,.28)}
 @keyframes unclip{to{clip-path:inset(0 0 0 0 round 260px 260px 28px 28px)}}
 .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.15);animation:settle 1.8s cubic-bezier(.2,.7,.1,1) .1s forwards}
 @keyframes settle{to{transform:scale(1)}}
-.tag{position:absolute;left:18px;bottom:18px;font-size:12px;color:var(--mut);max-width:15em;background:color-mix(in srgb,var(--bg) 85%,transparent);padding:8px 12px;border-radius:12px;backdrop-filter:blur(6px);z-index:2}
+.stack{position:absolute;left:14px;bottom:18px;z-index:4;display:flex;align-items:center;gap:12px;background:var(--bg);color:var(--ink);padding:8px 16px 8px 8px;border-radius:99px;box-shadow:0 14px 40px rgba(0,0,0,.22)}
+.stack .av{display:flex}.stack .av img,.stack .av i{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--bg);margin-left:-10px;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font:600 15px var(--serif);font-style:normal}
+.stack .av img:first-child,.stack .av i:first-child{margin-left:0}
+.stack span{font-size:13px;line-height:1.25}.stack b{display:block;font-size:14px}
 .float{position:absolute;right:-14px;top:12%;background:var(--bg);color:var(--ink);border-radius:18px;padding:12px 18px;box-shadow:0 14px 40px rgba(0,0,0,.2);font-size:14px;animation:bob 6s ease-in-out infinite;z-index:3}
 .float b{display:block;font:600 24px var(--serif);color:var(--acc)}
 @keyframes bob{50%{transform:translateY(-8px)}}
@@ -76,6 +80,12 @@ h2{font:600 clamp(34px,4.8vw,56px)/1.06 var(--serif);margin:10px 0 14px;letter-s
 .marquee .track{display:flex;gap:48px;width:max-content;animation:slide 40s linear infinite;font:500 clamp(24px,3.2vw,36px) var(--serif);white-space:nowrap}
 .marquee .track span:nth-child(even){opacity:.55}
 @keyframes slide{to{transform:translateX(-50%)}}
+/* stats */
+.stats{padding-block:48px;border-bottom:1px solid var(--line)}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.st-i{text-align:center;padding:10px}
+.st-i b{display:block;font:600 clamp(38px,5vw,60px)/1 var(--serif);color:var(--acc)}
+.st-i span{font-size:14px;color:var(--mut)}
 /* about */
 .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
 .pts{display:grid;gap:18px}
@@ -83,44 +93,71 @@ h2{font:600 clamp(34px,4.8vw,56px)/1.06 var(--serif);margin:10px 0 14px;letter-s
 .pt .ic{width:44px;height:44px;border-radius:50%;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font:600 20px var(--serif)}
 .pt h3{font:600 23px var(--serif);margin-bottom:2px}.pt p{font-size:15px;color:var(--mut)}
 /* services */
+.svc{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:start;margin-top:8px}
 .tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin:30px 0 8px;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{all:unset;cursor:pointer;white-space:nowrap;padding:10px 20px;border:1.5px solid var(--line);border-radius:99px;font-size:15px;color:var(--mut);transition:.2s}
 .tab:hover{border-color:var(--ink);color:var(--ink)}
 .tab[aria-selected=true]{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
-.menu{margin-top:10px}
 .row{display:grid;grid-template-columns:1fr auto auto;gap:6px 24px;align-items:baseline;padding:18px 4px;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .25s,background .25s}
 .row:hover{padding-inline:14px;background:color-mix(in srgb,var(--acc) 8%,transparent)}
-.row .n{font:500 21px var(--serif)}
-.row .d{font-size:14px;color:var(--mut);white-space:nowrap}
+.row .n{font:500 21px var(--serif)}.row .d{font-size:14px;color:var(--mut);white-space:nowrap}
 .row .p{font:600 21px var(--serif);white-space:nowrap;color:var(--acc)}
 .more{margin-top:22px}
 .menu-note{margin-top:18px;font-size:14px;color:var(--mut)}
-.info{margin-top:22px;padding:18px 22px;border-radius:18px;border:1px dashed var(--acc);color:var(--ink);font-size:15px;background:color-mix(in srgb,var(--acc) 6%,transparent)}
-/* gallery */
-.gal{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:auto auto;gap:16px;margin-top:36px}
-.gal figure{border-radius:24px;overflow:hidden;position:relative;aspect-ratio:4/5;background:var(--bg2)}
-.gal figure:first-child{grid-row:span 2;aspect-ratio:auto}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.1,1)}
-.gal figure:hover img{transform:scale(1.05)}
+.info{margin-top:22px;padding:18px 22px;border-radius:18px;border:1px dashed var(--acc);font-size:15px;background:color-mix(in srgb,var(--acc) 6%,transparent)}
+.sph{position:sticky;top:90px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sph img{width:100%;height:100%;object-fit:cover;border-radius:22px;aspect-ratio:3/4;animation:fadein .6s ease both}
+.sph img:first-child{grid-column:span 2;aspect-ratio:4/3}
+/* portfolio */
+.fil{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 22px}
+.mas{columns:4 200px;column-gap:14px}
+.mas button{all:unset;display:block;width:100%;margin:0 0 14px;border-radius:20px;overflow:hidden;cursor:zoom-in;break-inside:avoid;position:relative;background:var(--bg2)}
+.mas img{width:100%;height:auto;transition:transform 1s cubic-bezier(.2,.7,.1,1)}
+.mas button:hover img{transform:scale(1.05)}
+.mas button::after{content:"+";position:absolute;right:12px;bottom:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.9);color:#222;display:grid;place-items:center;font-size:20px;opacity:0;transition:.3s}
+.mas button:hover::after{opacity:1}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,8,8,.92);display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}.lb img{max-width:92vw;max-height:88vh;border-radius:14px}
+.lb button{all:unset;cursor:pointer;position:absolute;color:#fff;font-size:34px;padding:18px;opacity:.85}
+.lb .x{top:6px;right:10px}.lb .pv{left:8px;top:50%}.lb .nx{right:8px;top:50%}
+/* client photos */
+.cph{overflow:hidden;margin-top:34px}
+.cph .tr{display:flex;gap:14px;width:max-content;animation:slide 60s linear infinite}
+.cph img{height:240px;width:auto;border-radius:18px}
+.cph:hover .tr{animation-play-state:paused}
 .note{margin-top:14px;font-size:13px;color:var(--mut)}
-/* reviews carousel */
+/* reviews */
 .rv-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
 .arrows{display:flex;gap:8px}
 .arrows button{all:unset;cursor:pointer;width:46px;height:46px;border:1.5px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:20px;transition:.2s}
 .arrows button:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .rvs{display:flex;gap:16px;margin-top:30px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;scrollbar-width:none}
 .rvs::-webkit-scrollbar{display:none}
-.rv{flex:0 0 min(340px,82%);scroll-snap-align:start;background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px;min-height:260px}
-.rv .stars{color:var(--acc);letter-spacing:3px;font-size:14px}
-.rv q{font:500 23px/1.32 var(--serif);quotes:none}
-.rv .who{margin-top:auto;font-size:14px;color:var(--mut);display:flex;justify-content:space-between;gap:10px;align-items:end}
-.rv .who b{color:var(--ink);font-weight:600}
+.rv{flex:0 0 min(340px,82%);scroll-snap-align:start;background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:14px;min-height:270px}
+.rv .top{display:flex;align-items:center;gap:12px}
+.rv .a{width:46px;height:46px;border-radius:50%;object-fit:cover;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font:600 21px var(--serif);flex:none}
+.rv .top b{display:block;font-weight:600;line-height:1.2}.rv .top small{color:var(--mut);font-size:13px}
+.rv .stars{color:var(--acc);letter-spacing:3px;font-size:14px;margin-left:auto}
+.rv q{font:500 22px/1.32 var(--serif);quotes:none}
+.rv .who{margin-top:auto;font-size:13px;color:var(--mut);display:flex;justify-content:space-between;gap:10px}
+.rv .who span:last-child{border:1px solid var(--line);padding:2px 10px;border-radius:99px}
 /* team */
 .team{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
-.m{border:1px solid var(--line);border-radius:22px;padding:22px;background:var(--bg)}
-.m .av{width:52px;height:52px;border-radius:50%;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font:600 24px var(--serif);margin-bottom:14px}
-.m h3{font:600 23px var(--serif)}.m p{font-size:14px;color:var(--mut)}
+.m{border-radius:22px;overflow:hidden;background:var(--bg);border:1px solid var(--line)}
+.m .ph{aspect-ratio:4/5;background:var(--acc);display:grid;place-items:center;color:var(--acc-ink);font:600 54px var(--serif);overflow:hidden}
+.m .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.m:hover .ph img{transform:scale(1.06)}
+.m .t{padding:14px 16px 18px}
+.m h3{font:600 22px var(--serif);line-height:1.15}.m p{font-size:13.5px;color:var(--mut)}
+/* faq */
+.faq{margin-top:30px;max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:6px 0}
+.faq summary{cursor:pointer;list-style:none;font:500 24px var(--serif);padding:14px 36px 14px 0;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font:400 28px var(--sans);color:var(--acc);transition:transform .3s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq p{padding:0 0 18px;color:var(--mut)}
 /* visit */
 .visit{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
 .box{border:1px solid var(--line);border-radius:24px;padding:30px;background:var(--bg2)}
@@ -133,36 +170,210 @@ tr.today td{color:var(--acc);font-weight:600}
 .soc{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 .am{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .am span{font-size:13px;border:1px solid var(--line);border-radius:99px;padding:5px 12px;color:var(--mut)}
-/* final */
 .final{background:var(--hbg);color:var(--hink);text-align:center;border-radius:36px;padding:clamp(48px,8vw,96px) 24px;position:relative;overflow:hidden}
 .final h2{color:var(--hink);position:relative}.final p{color:var(--hmut);margin:0 auto 28px;max-width:30em;position:relative}
-.final .btn{position:relative;border-color:var(--hacc)}
-.final .btn.primary{background:var(--hacc);color:var(--hbg)}
+.final .btn{position:relative;border-color:var(--hacc)}.final .btn.primary{background:var(--hacc);color:var(--hbg)}
 footer{padding:40px 0 110px;color:var(--mut);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .demo-tag{position:fixed;left:12px;bottom:12px;z-index:70;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 12px;border-radius:99px;opacity:.88}
 .sticky{display:none}
-.rev{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}
-.rev.in{opacity:1;transform:none}
-/* decor animations */
+.rev{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}.rev.in{opacity:1;transform:none}
 @keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
 @keyframes bloom{from{transform:scale(.2) rotate(var(--r));opacity:0}to{transform:scale(1) rotate(var(--r));opacity:1}}
 @keyframes drawl{to{stroke-dashoffset:0}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes drift{0%{transform:translate(0,0) rotate(0);opacity:0}15%{opacity:.9}100%{transform:translate(var(--dx),110vh) rotate(260deg);opacity:0}}
-.petal{position:absolute;top:-30px;width:16px;height:22px;border-radius:70% 0 70% 0;background:var(--hacc);opacity:0;animation:drift var(--t,16s) linear infinite;animation-delay:var(--dl,0s);left:var(--l,50%)}
-@supports (animation-timeline:view()){.gal img{animation:par linear both;animation-timeline:view();animation-range:cover 0% cover 100%}@keyframes par{from{transform:translateY(-5%) scale(1.1)}to{transform:translateY(5%) scale(1.1)}}.gal figure:hover img{animation:none;transform:scale(1.05)}}
+.petal{position:absolute;top:-30px;border-radius:70% 0 70% 0;background:var(--hacc);opacity:0;animation:drift var(--t,16s) linear infinite;animation-delay:var(--dl,0s);left:var(--l,50%)}
+
+/* ---- GSAP layer ---- */
+.reel{background:var(--hbg);color:var(--hink);padding-block:var(--sp) 0;overflow:hidden}
+.reel .eyebrow{color:var(--hacc)}.reel .sub{color:var(--hmut)}
+.reel .rail{height:min(74vh,620px);display:flex;align-items:center;margin-top:24px}
+.reel .trk{display:flex;gap:20px;padding-inline:max(24px,calc((100vw - 1160px)/2));will-change:transform}
+.reel figure{flex:none;height:min(62vh,520px);aspect-ratio:3/4;border-radius:26px;overflow:hidden;background:rgba(255,255,255,.08)}
+.reel img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+.reel .hint{position:absolute;right:24px;top:var(--sp);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--hmut);display:flex;gap:10px;align-items:center}
+.reel .hint i{display:block;width:44px;height:1.5px;background:var(--hacc);transform-origin:left;animation:hint 2.2s ease-in-out infinite}
+@keyframes hint{0%,100%{transform:scaleX(.3)}50%{transform:scaleX(1)}}
+.hov{position:fixed;left:0;top:0;width:210px;aspect-ratio:3/4;border-radius:18px;overflow:hidden;opacity:0;pointer-events:none;z-index:45;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.hov img{width:100%;height:100%;object-fit:cover}
+.mas button.gone{display:none}
+.m{transform-style:preserve-3d}
 @media(max-width:900px){
- .hero .wrap,.about,.visit{grid-template-columns:1fr}
+ .reel .rail{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--sp)}
+ .reel .trk{padding-inline:24px}.reel figure{height:360px;scroll-snap-align:start}.reel .hint{display:none}
+}
+
+/* ---- v6: richer motion ---- */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+.mf{padding-block:clamp(90px,13vw,170px);background:var(--bg)}
+.mf-t{font:500 clamp(30px,4.6vw,62px)/1.16 var(--serif);max-width:19em;letter-spacing:-.01em}
+.mf-t .wd{color:color-mix(in srgb,var(--ink) 16%,transparent)}
+.mf-by{margin-top:26px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.about .l{position:sticky;top:96px}
+.polas{position:relative;height:440px;margin-top:34px}
+.pol{position:absolute;width:46%;background:#fff;padding:9px 9px 30px;border-radius:12px;box-shadow:0 22px 50px rgba(30,20,10,.22);transform:rotate(var(--r));transition:box-shadow .3s}
+.pol img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+.pol span{position:absolute;left:0;right:0;bottom:7px;text-align:center;font:500 18px var(--serif);color:#3a2f27}
+.pol:nth-child(1){left:0;top:0;--r:-6deg}.pol:nth-child(2){left:44%;top:60px;--r:5deg}.pol:nth-child(3){left:12%;top:215px;--r:-2.5deg;width:42%}
+.pol:hover{box-shadow:0 30px 70px rgba(30,20,10,.32)}
+.cur{position:fixed;left:0;top:0;width:16px;height:16px;margin:-8px 0 0 -8px;border:1.5px solid var(--acc);border-radius:50%;pointer-events:none;z-index:120;display:grid;place-items:center;font:600 11px var(--sans);color:var(--acc-ink);letter-spacing:.06em;opacity:0;transition:width .3s,height .3s,margin .3s,background .3s,opacity .3s}
+.cur.on{opacity:1}
+.cur.big{width:74px;height:74px;margin:-37px 0 0 -37px;background:var(--acc);border-color:var(--acc)}
+.cur.btnh{width:34px;height:34px;margin:-17px 0 0 -17px;background:transparent}
+.mas button{clip-path:inset(0 round 20px)}
+@media(max-width:900px){.about .l{position:static}.polas{height:360px}.cur{display:none}}
+
+/* ---- v7: lookbook ---- */
+.pop{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.pc{display:grid;grid-template-columns:104px 1fr;gap:18px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:24px;background:var(--bg);text-decoration:none;transition:transform .35s,box-shadow .35s}
+.pc:hover{transform:translateY(-5px);box-shadow:0 22px 50px rgba(40,25,15,.14)}
+.pc img{width:104px;height:104px;object-fit:cover;border-radius:18px}
+.pc small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.pc b{display:block;font:600 23px/1.15 var(--serif);margin:3px 0 4px}
+.pc span{font-size:14px;color:var(--mut)}.pc em{font:600 22px var(--serif);font-style:normal;color:var(--acc);margin-left:8px}
+.mas{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:158px;gap:14px;grid-auto-flow:dense;columns:auto}
+.mas button{margin:0;height:100%;grid-column:span var(--w,1);grid-row:span var(--h,1);position:relative}
+.mas button img{width:100%;height:100%;object-fit:cover}
+.mas button::after{display:none}
+.mas .cap{position:absolute;inset:auto 0 0 0;padding:44px 16px 14px;background:linear-gradient(to top,rgba(20,12,8,.82),rgba(20,12,8,0));color:#fff;display:flex;flex-direction:column;gap:2px;text-align:left;transform:translateY(55%);opacity:.0;transition:transform .45s cubic-bezier(.2,.7,.1,1),opacity .35s}
+.mas button:hover .cap,.mas button:focus-visible .cap{transform:none;opacity:1}
+.mas .cap b{font:600 20px/1.15 var(--serif)}.mas .cap i{font-size:13px;font-style:normal;opacity:.9}
+.mas .cap u{font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--hacc);margin-top:4px}
+.lbc{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.96);color:#241a14;padding:10px 12px 10px 20px;border-radius:99px;max-width:94vw;flex-wrap:wrap;justify-content:center}
+.lbc b{font:600 20px var(--serif)}.lbc span{font-size:14px;color:#6b5d52}
+.lbc a{background:var(--acc);color:var(--acc-ink);border-radius:99px;padding:10px 18px;text-decoration:none;font-weight:600;font-size:14px}
+@media(max-width:900px){
+ .pop{grid-template-columns:1fr}
+ .mas{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+ .mas button{grid-column:span min(var(--w,1),2)}
+ .mas .cap{transform:none;opacity:1;padding-top:30px}.mas .cap u{display:none}
+}
+
+/* ---- v8: category tiles ---- */
+.cg{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:250px;gap:16px;margin-top:36px}
+.ct{all:unset;box-sizing:border-box;position:relative;overflow:hidden;border-radius:28px;cursor:pointer;color:#fff;isolation:isolate;background:var(--hbg);display:flex;flex-direction:column;justify-content:space-between;padding:22px}
+.ct:nth-child(1){grid-column:span 2;grid-row:span 2}
+.ct:nth-child(6){grid-column:span 2}
+.ct img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.1s cubic-bezier(.2,.7,.1,1)}
+.ct::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(18,12,8,.82) 8%,rgba(18,12,8,.08) 62%)}
+.ct:hover img{transform:scale(1.08)}
+.ct .nm{font:500 15px var(--serif);letter-spacing:.1em;opacity:.8}
+.ct h3{font:600 clamp(26px,2.6vw,36px)/1.05 var(--serif);margin-bottom:6px}
+.ct:nth-child(1) h3{font-size:clamp(34px,4vw,52px)}
+.ct .meta{font-size:13.5px;opacity:.92}
+.ct .go{position:absolute;right:18px;top:18px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);color:#201710;display:grid;place-items:center;font-size:20px;transition:transform .45s cubic-bezier(.2,.7,.1,1),background .3s}
+.ct:hover .go{transform:rotate(-45deg) scale(1.1);background:var(--hacc)}
+.ct.nophoto{background:radial-gradient(120% 90% at 20% 0%,color-mix(in srgb,var(--hacc) 38%,var(--hbg)),var(--hbg))}
+.ct.nophoto::before{background:none}.ct.nophoto .big{position:absolute;right:-8px;bottom:-30px;font:600 150px/1 var(--serif);color:rgba(255,255,255,.1);z-index:-1}
+.ct:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+@media(max-width:900px){.cg{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}.ct:nth-child(1){grid-column:span 2;grid-row:span 1}.ct:nth-child(6){grid-column:auto}.ct h3{font-size:24px}.ct:nth-child(1) h3{font-size:30px}}
+
+/* ---- v9: hero collage ---- */
+html{overflow-x:clip}.about .pts{overflow-x:clip;padding-block:2px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 78% 42%,color-mix(in srgb,var(--hacc) 24%,transparent),transparent 70%),radial-gradient(40% 50% at 8% 90%,color-mix(in srgb,var(--hacc) 14%,transparent),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+.hero h1{font-size:clamp(50px,7.6vw,104px);line-height:.96}
+.hero h1 em{font-style:italic;color:var(--hacc)}
+.hc{position:relative;aspect-ratio:1/1.06;width:min(100%,560px);margin-inline:auto}
+.hc .ph{position:absolute;overflow:hidden;background:var(--bg2);will-change:transform}
+.hc .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.hc-a{left:20%;top:0;width:64%;aspect-ratio:3/4.1;border-radius:999px 999px 30px 30px;z-index:2;box-shadow:0 40px 90px rgba(0,0,0,.35);clip-path:inset(10% 8% 10% 8% round 999px 999px 30px 30px);animation:unclipA 1.4s cubic-bezier(.2,.7,.1,1) .15s forwards}
+@keyframes unclipA{to{clip-path:inset(0 0 0 0 round 999px 999px 30px 30px)}}
+.hc-b{left:0;bottom:7%;width:42%;aspect-ratio:4/5;border-radius:26px;z-index:3;transform:rotate(-8deg);box-shadow:0 26px 60px rgba(0,0,0,.35);animation:inL 1.1s cubic-bezier(.2,.7,.1,1) .7s both,flo 7s ease-in-out 2s infinite}
+.hc-c{right:0;bottom:0;width:41%;aspect-ratio:1;border-radius:50%;z-index:3;border:7px solid var(--hbg);box-shadow:0 26px 60px rgba(0,0,0,.35);animation:inR 1.1s cubic-bezier(.2,.7,.1,1) .95s both,flo 8s ease-in-out 2.4s infinite reverse}
+@keyframes inL{from{opacity:0;transform:translateX(-60px) rotate(-18deg)}to{opacity:1;transform:rotate(-8deg)}}
+@keyframes inR{from{opacity:0;transform:translateX(60px) scale(.7)}to{opacity:1;transform:none}}
+@keyframes flo{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.badge{position:absolute;left:2%;top:4%;width:118px;height:118px;z-index:4;animation:spin 22s linear infinite}
+.badge text{font:600 11.5px var(--sans);letter-spacing:.2em;text-transform:uppercase;fill:var(--hink)}
+.badge-w{position:absolute;left:2%;top:4%;width:118px;height:118px;z-index:4;display:grid;place-items:center;pointer-events:none}
+.badge-w span{width:50px;height:50px;border-radius:50%;background:var(--hacc);color:var(--hbg);display:grid;place-items:center;font:600 22px var(--serif)}
+.hero .stack{left:4%;bottom:-6px;z-index:5}.hero .float{right:2%;top:6%;z-index:5}
+.cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--hmut);z-index:2}
+.cue i{display:block;width:1.5px;height:38px;background:linear-gradient(var(--hacc),transparent);animation:cue 2s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+@media(max-width:900px){.hc{width:min(100%,420px)}.badge,.badge-w{width:92px;height:92px}.badge-w span{width:38px;height:38px;font-size:18px}.cue{display:none}.hero h1{font-size:clamp(46px,13vw,70px)}}
+
+/* ---- v10: new blocks ---- */
+.how{background:var(--bg2)}
+.how .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px;position:relative}
+.how .stp{padding:28px;border:1px solid var(--line);border-radius:26px;background:var(--bg);position:relative}
+.how .stp .ic{width:58px;height:58px;border-radius:18px;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;margin-bottom:18px}
+.how .stp .ic svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.how .stp h3{font:600 26px var(--serif);margin-bottom:6px}.how .stp p{color:var(--mut);font-size:15.5px}
+.how .stp .n{position:absolute;right:22px;top:12px;font:600 64px var(--serif);color:color-mix(in srgb,var(--acc) 14%,transparent)}
+.cmp{position:relative;aspect-ratio:16/10;border-radius:30px;overflow:hidden;--p:50%;margin-top:34px;user-select:none;touch-action:pan-y;background:var(--bg2);max-height:620px;width:100%}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp .a{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.cmp .bar{position:absolute;top:0;bottom:0;left:var(--p);width:2px;background:#fff;box-shadow:0 0 14px rgba(0,0,0,.4)}
+.cmp .kn{position:absolute;top:50%;left:var(--p);width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:#fff;color:#241a14;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:20px;letter-spacing:-3px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp .lb2{position:absolute;top:18px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.42);padding:7px 14px;border-radius:99px;backdrop-filter:blur(6px)}
+.cmp .lb2.l{left:18px}.cmp .lb2.r{right:18px}
+.pm{background:var(--hbg);color:var(--hink)}
+.pm .eyebrow{color:var(--hacc)}.pm h2{color:var(--hink)}.pm .sub{color:var(--hmut)}
+.pm .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.pm .tc{padding:26px;border-radius:24px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);transition:transform .35s,background .35s}
+.pm .tc:hover{transform:translateY(-6px);background:rgba(255,255,255,.14)}
+.pm .tc small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--hacc)}
+.pm .tc h3{font:600 26px/1.15 var(--serif);margin:6px 0 10px}.pm .tc .mt{display:flex;gap:14px;align-items:baseline;font-size:14px;color:var(--hmut)}.pm .tc b{font:600 26px var(--serif);color:var(--hink)}
+.pm .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;counter-reset:f}
+.pm .fl{padding:20px 4px;border-top:1.5px solid rgba(255,255,255,.3)}
+.pm .fl::before{counter-increment:f;content:"0" counter(f);font:600 34px var(--serif);color:var(--hacc);display:block;margin-bottom:6px}
+.pm .fl h4{font:600 21px var(--serif)}.pm .fl p{font-size:14px;color:var(--hmut)}
+.pm .nt{margin-top:22px;font-size:13px;color:var(--hmut)}
+.gcta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:6px;padding:22px 26px;border:1px solid var(--line);border-radius:26px;background:var(--bg2)}
+.gcta .gs{display:flex;align-items:baseline;gap:10px}.gcta .gs b{font:600 44px var(--serif);color:var(--acc)}.gcta .stars{color:var(--acc);letter-spacing:3px}
+.gcta .gt{flex:1;min-width:200px;color:var(--mut);font-size:15px}
+.pk{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
+.pk.one{grid-template-columns:1fr}
+.pkc{padding:32px;border-radius:28px;background:var(--hbg);color:var(--hink);position:relative;overflow:hidden}
+.pkc h3{font:600 30px/1.1 var(--serif);margin-bottom:8px}.pkc p{color:var(--hmut);max-width:30em;margin-bottom:18px}
+.pkc::after{content:"";position:absolute;right:-40px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,var(--hacc),transparent 68%);opacity:.35}
+.pkc .btn{border-color:var(--hacc);color:var(--hink);position:relative;z-index:1}
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.tip{border:1px solid var(--line);border-radius:26px;background:var(--bg2);overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.tip:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(40,25,15,.12)}
+.tip .th{padding:26px 26px 18px}.tip small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.tip h3{font:600 26px/1.15 var(--serif);margin:8px 0 8px}.tip p{font-size:15px;color:var(--mut)}
+.tip .tb{max-height:0;overflow:hidden;transition:max-height .5s ease;padding-inline:26px;color:var(--mut);font-size:15px}
+.tip.open .tb{max-height:520px;padding-bottom:24px}
+.tip .tb li{margin:0 0 8px 18px}
+.tip .mr{display:inline-flex;align-items:center;gap:8px;margin-top:10px;color:var(--acc);font-weight:600;font-size:14px}
+.tipnote{font-size:13px;color:var(--mut);margin-top:16px}
+.rq{margin-top:16px;padding:34px}.rq form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.rq .f{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--mut)}.rq .f.w{grid-column:1/-1}
+.rq input,.rq select,.rq textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:13px 16px;width:100%}
+.rq textarea{min-height:96px;resize:vertical}.rq input:focus,.rq select:focus,.rq textarea:focus{outline:2px solid var(--acc);border-color:var(--acc)}
+.rq .ag{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--mut)}.rq .ag input{width:auto;margin-top:3px}
+.rq .hp{position:absolute;left:-9999px}
+.rq .ok{display:none;margin-top:14px;padding:16px 18px;border-radius:14px;background:color-mix(in srgb,var(--acc) 12%,var(--bg));border:1px solid var(--acc)}
+.sheet-bg{position:fixed;inset:0;z-index:110;background:rgba(15,10,8,.55);display:none;align-items:flex-end;justify-content:center;backdrop-filter:blur(3px)}
+.sheet-bg.on{display:flex}
+.sheet{width:min(560px,100%);background:var(--bg);color:var(--ink);border-radius:30px 30px 0 0;padding:28px 28px 30px;transform:translateY(40px);opacity:0;animation:shin .45s cubic-bezier(.2,.7,.1,1) forwards;box-shadow:0 -20px 80px rgba(0,0,0,.3)}
+@keyframes shin{to{transform:none;opacity:1}}
+.sheet h3{font:600 30px/1.1 var(--serif);margin:6px 0}.sheet .sm{color:var(--mut);margin-bottom:18px}.sheet .sm b{color:var(--acc);font:600 24px var(--serif)}
+.sheet ol{margin:0 0 20px 20px;color:var(--mut);display:grid;gap:6px;font-size:15px}
+.sheet .bt{display:flex;gap:10px;flex-wrap:wrap}.sheet .bt .btn{flex:1;min-width:150px}
+.sheet .sn{margin-top:14px;font-size:12.5px;color:var(--mut)}.sheet .xx{float:right;all:unset;cursor:pointer;font-size:30px;line-height:1;color:var(--mut)}
+.fab{position:fixed;right:22px;bottom:22px;z-index:65;display:flex;gap:8px;align-items:center;opacity:0;pointer-events:none;transform:translateY(20px);transition:opacity .4s,transform .4s}
+.fab.on{opacity:1;pointer-events:auto;transform:none}
+.fab .btn{box-shadow:0 18px 44px rgba(0,0,0,.28)}.fab .ph2{width:52px;height:52px;padding:0;background:var(--bg);color:var(--ink)}
+@media(max-width:900px){.how .steps,.pm .tg,.tips,.pk,.rq form{grid-template-columns:1fr}.pm .flow{grid-template-columns:1fr 1fr}.cmp{aspect-ratio:4/5}.fab{display:none}.sheet{padding:24px 20px 26px}}
+@media(prefers-reduced-motion:reduce){.sheet{animation:none;transform:none;opacity:1}}
+@media(max-width:900px){
+ .hero .wrap,.about,.visit,.svc{grid-template-columns:1fr}
  .hero{padding-block:28px 56px;min-height:0}.art{aspect-ratio:5/6;border-radius:180px 180px 24px 24px}
- .float{right:8px}.decor{opacity:.55}
- .team{grid-template-columns:1fr 1fr}
- .gal{grid-template-columns:1fr 1fr}.gal figure:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:4/3}
+ .float{right:8px}.decor{opacity:.55}.sph{position:static;grid-template-columns:repeat(3,1fr)}.sph img:first-child{grid-column:span 3}
+ .team{grid-template-columns:1fr 1fr}.stats .grid{grid-template-columns:1fr 1fr}
+ .mas{columns:2 140px}
  nav a.l,header nav .btn{display:none}
  .row{grid-template-columns:1fr auto}.row .d{grid-column:1}.row .p{grid-row:1;grid-column:2}
  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:55;gap:10px;padding:10px 14px;background:var(--bg);border-top:1px solid var(--line)}
- .sticky .btn{flex:1;padding:13px 10px}
- .demo-tag{bottom:76px}
+ .sticky .btn{flex:1;padding:13px 10px}.demo-tag{bottom:76px}
 }
 @media(prefers-reduced-motion:reduce){
  *{animation:none!important;transition:none!important}
@@ -173,9 +384,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <body>
 <div class="progress" id="progress"></div>
 <header><div class="wrap">
- <a class="logo" href="#">Taїna</a>
+ <a class="logo" href="#"><img src="img/t/logo.jpg" alt=""><span>Taїna</span></a>
  <nav>
-  <a class="l" href="#services" data-t="nav_s"></a><a class="l" href="#about" data-t="nav_a"></a><a class="l" href="#reviews" data-t="nav_r"></a><a class="l" href="#visit" data-t="nav_v"></a>
+  <a class="l" href="#services" data-t="nav_s"></a><a class="l" href="#works" data-t="nav_w"></a><a class="l" href="#reviews" data-t="nav_r"></a><a class="l" href="#visit" data-t="nav_v"></a>
   <div class="lang" role="group" aria-label="Language"><button data-l="uk" aria-pressed="true">UA</button><button data-l="pl" aria-pressed="false">PL</button></div>
   <a class="btn primary sm" href="https://booksy.com/pl-pl/182394_taina-nails-beauty_salon-kosmetyczny_8820_krakow" target="_blank" rel="noopener" data-t="book"></a>
  </nav>
@@ -210,56 +421,133 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <path d="M0,0 C-36,-50 -32,-125 0,-185 C32,-125 36,-50 0,0Z" fill="url(#pgb)" stroke="#c98b7c" stroke-width="1.5" style="--r:-60deg;transform-origin:0 0;animation:bloom 1.8s cubic-bezier(.2,.7,.1,1) 0.20s both"/><path d="M0,-18 L0,-150" stroke="#c98b7c" stroke-width="1" opacity=".5" style="--r:-60deg;transform-origin:0 0;transform:rotate(-60deg);" /><path d="M0,0 C-36,-50 -32,-125 0,-185 C32,-125 36,-50 0,0Z" fill="url(#pgb)" stroke="#c98b7c" stroke-width="1.5" style="--r:-30deg;transform-origin:0 0;animation:bloom 1.8s cubic-bezier(.2,.7,.1,1) 0.35s both"/><path d="M0,-18 L0,-150" stroke="#c98b7c" stroke-width="1" opacity=".5" style="--r:-30deg;transform-origin:0 0;transform:rotate(-30deg);" /><path d="M0,0 C-36,-50 -32,-125 0,-185 C32,-125 36,-50 0,0Z" fill="url(#pgb)" stroke="#c98b7c" stroke-width="1.5" style="--r:0deg;transform-origin:0 0;animation:bloom 1.8s cubic-bezier(.2,.7,.1,1) 0.50s both"/><path d="M0,-18 L0,-150" stroke="#c98b7c" stroke-width="1" opacity=".5" style="--r:0deg;transform-origin:0 0;transform:rotate(0deg);" /><path d="M0,0 C-36,-50 -32,-125 0,-185 C32,-125 36,-50 0,0Z" fill="url(#pgb)" stroke="#c98b7c" stroke-width="1.5" style="--r:30deg;transform-origin:0 0;animation:bloom 1.8s cubic-bezier(.2,.7,.1,1) 0.65s both"/><path d="M0,-18 L0,-150" stroke="#c98b7c" stroke-width="1" opacity=".5" style="--r:30deg;transform-origin:0 0;transform:rotate(30deg);" /><path d="M0,0 C-36,-50 -32,-125 0,-185 C32,-125 36,-50 0,0Z" fill="url(#pgb)" stroke="#c98b7c" stroke-width="1.5" style="--r:60deg;transform-origin:0 0;animation:bloom 1.8s cubic-bezier(.2,.7,.1,1) 0.80s both"/><path d="M0,-18 L0,-150" stroke="#c98b7c" stroke-width="1" opacity=".5" style="--r:60deg;transform-origin:0 0;transform:rotate(60deg);" />
 <path d="M0,0 C-10,-60 -38,-100 -48,-135" fill="none" stroke="#c99b2e" stroke-width="2.2" stroke-linecap="round"/><ellipse cx="-48" cy="-139" rx="5" ry="10" fill="#e9c445" transform="rotate(-24 -48 -139)"/><path d="M0,0 C-5,-60 -19,-100 -24,-135" fill="none" stroke="#c99b2e" stroke-width="2.2" stroke-linecap="round"/><ellipse cx="-24" cy="-139" rx="5" ry="10" fill="#e9c445" transform="rotate(-12 -24 -139)"/><path d="M0,0 C0,-60 0,-100 0,-135" fill="none" stroke="#c99b2e" stroke-width="2.2" stroke-linecap="round"/><ellipse cx="0" cy="-139" rx="5" ry="10" fill="#e9c445" transform="rotate(0 0 -139)"/><path d="M0,0 C5,-60 19,-100 24,-135" fill="none" stroke="#c99b2e" stroke-width="2.2" stroke-linecap="round"/><ellipse cx="24" cy="-139" rx="5" ry="10" fill="#e9c445" transform="rotate(12 24 -139)"/><path d="M0,0 C10,-60 38,-100 48,-135" fill="none" stroke="#c99b2e" stroke-width="2.2" stroke-linecap="round"/><ellipse cx="48" cy="-139" rx="5" ry="10" fill="#e9c445" transform="rotate(24 48 -139)"/>
 </g></svg></div>
-  <div class="art"><img src="img/taina-hero.jpg" alt="" fetchpriority="high"><span class="tag" data-t="art"></span></div>
-  <div class="float fade" style="--d:1.4s"><b>1328</b><span data-t="fl1l"></span></div>
+  <div class="hc" id="hc">
+   <div class="ph hc-b" data-d="26"><img src="img/t/n7.jpg" alt="" loading="eager"></div>
+   <div class="ph hc-a" data-d="12"><img src="img/t/c1.jpg" alt="" fetchpriority="high"></div>
+   <div class="ph hc-c" data-d="40"><img src="img/t/n1.jpg" alt="" loading="eager"></div>
+   <svg class="badge" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="cp" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#cp">TAÏNA nails & beauty · Kraków · </textPath></text></svg>
+   <div class="badge-w" aria-hidden="true"><span>&#10022;</span></div>
+   <div class="stack fade" style="--d:1.5s"><div class="av"><img src="img/t/st-anna-diachenko.jpg" alt=""><img src="img/t/st-iryna.jpg" alt=""><img src="img/t/st-mila.jpg" alt=""><img src="img/t/st-olga.jpg" alt=""></div><span><b data-t="team_n"></b><span data-t="team_s"></span></span></div>
+   <div class="float fade" style="--d:1.7s"><b>1328</b><span data-t="fl1l"></span></div>
+  </div>
  </div>
-</div></section>
+ </div>
+ <div class="cue" aria-hidden="true"><span data-t="cue"></span><i></i></div></section>
 
 <div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
 
-<section id="about"><div class="wrap"><div class="about"><div><div class="eyebrow" data-t="a_e"></div><h2 data-t="a_h"></h2><p class="sub" data-t="a_p"></p></div><div class="pts"><div class="pt rev"><div class="ic">1</div><div><h3 data-t="p1h"></h3><p data-t="p1p"></p></div></div><div class="pt rev"><div class="ic">2</div><div><h3 data-t="p2h"></h3><p data-t="p2p"></p></div></div><div class="pt rev"><div class="ic">3</div><div><h3 data-t="p3h"></h3><p data-t="p3p"></p></div></div><div class="pt rev"><div class="ic">4</div><div><h3 data-t="p4h"></h3><p data-t="p4p"></p></div></div></div></div></div></section>
+<section class="stats"><div class="wrap"><div class="grid">
+ <div class="st-i"><b data-count="97">0</b><span data-t="st1"></span></div>
+ <div class="st-i"><b data-count="10">0</b><span data-t="st2"></span></div>
+ <div class="st-i"><b data-count="1328">0</b><span data-t="st3"></span></div>
+ <div class="st-i"><b>9–21</b><span data-t="st4"></span></div>
+</div></div></section>
+
+<section class="mf" id="mf"><div class="wrap">
+ <p class="mf-t" id="mf-t"></p><div class="mf-by" data-t="mf_by"></div></div></section>
+
+<section class="reel" id="reel"><div class="wrap" style="position:relative">
+ <div class="eyebrow" data-t="re_e"></div><h2 data-t="re_h" style="color:var(--hink)"></h2><p class="sub" data-t="re_sub"></p>
+ <div class="hint"><span data-t="re_hint"></span><i></i></div></div>
+ <div class="rail"><div class="trk" id="trk"></div></div>
+</section>
+
+<section id="about"><div class="wrap"><div class="about"><div class="l"><div class="eyebrow" data-t="a_e"></div><h2 data-t="a_h"></h2><p class="sub" data-t="a_p"></p><div class="polas"><div class="pol"><img src="img/t/st-anna-diachenko.jpg" alt="" loading="lazy"><span>Anna</span></div><div class="pol"><img src="img/t/st-iryna.jpg" alt="" loading="lazy"><span>Iryna</span></div><div class="pol"><img src="img/t/st-mila.jpg" alt="" loading="lazy"><span>Mila</span></div></div></div><div class="pts"><div class="pt rev"><div class="ic">1</div><div><h3 data-t="p1h"></h3><p data-t="p1p"></p></div></div><div class="pt rev"><div class="ic">2</div><div><h3 data-t="p2h"></h3><p data-t="p2p"></p></div></div><div class="pt rev"><div class="ic">3</div><div><h3 data-t="p3h"></h3><p data-t="p3p"></p></div></div><div class="pt rev"><div class="ic">4</div><div><h3 data-t="p4h"></h3><p data-t="p4p"></p></div></div></div></div></div></section>
+
+<section class="how" id="how"><div class="wrap">
+ <div class="eyebrow" data-t="how_e"></div><h2 data-t="how_h"></h2><p class="sub" data-t="how_sub"></p>
+ <div class="steps">
+  <div class="stp rev"><span class="n">1</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><h3 data-t="h1t"></h3><p data-t="h1p"></p></div>
+  <div class="stp rev"><span class="n">2</span><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></div><h3 data-t="h2t"></h3><p data-t="h2p"></p></div>
+  <div class="stp rev"><span class="n">3</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3 data-t="h3t"></h3><p data-t="h3p"></p></div>
+ </div>
+</div></section>
+
+<section id="cats" style="padding-bottom:0"><div class="wrap">
+ <div class="eyebrow" data-t="ct_e"></div><h2 data-t="ct_h"></h2><p class="sub" data-t="ct_sub"></p>
+ <div class="cg" id="cg"></div>
+</div></section>
 
 <section id="services"><div class="wrap">
  <div class="eyebrow" data-t="s_e"></div>
  <h2 data-t="s_h"></h2><p class="sub" data-t="s_sub"></p>
  <div class="tabs" role="tablist" id="tabs"></div>
- <div class="menu" id="menu" role="tabpanel"></div>
- 
- <p class="menu-note"><span data-t="s_note"></span> <a href="https://booksy.com/pl-pl/182394_taina-nails-beauty_salon-kosmetyczny_8820_krakow" target="_blank" rel="noopener" style="color:var(--acc)" data-t="s_all"></a></p>
+ <div class="svc">
+  <div><div class="menu" id="menu" role="tabpanel"></div>
+   <p class="menu-note"><span data-t="s_note"></span> <a href="https://booksy.com/pl-pl/182394_taina-nails-beauty_salon-kosmetyczny_8820_krakow" target="_blank" rel="noopener" style="color:var(--acc)" data-t="s_all"></a></p></div>
+  <div class="sph" id="sph"></div>
+ </div>
 </div></section>
 
 <section id="works" style="background:var(--bg2)"><div class="wrap">
  <div class="eyebrow" data-t="w_e"></div>
  <h2 data-t="w_h"></h2><p class="sub" data-t="w_sub"></p>
- <div class="gal"><figure class="rev"><img src="img/taina-nailart.jpg" alt="" loading="lazy"></figure><figure class="rev"><img src="img/taina-lashes.jpg" alt="" loading="lazy"></figure><figure class="rev"><img src="img/taina-pedicure.jpg" alt="" loading="lazy"></figure></div>
+ <div class="pop" id="pop"></div>
+ <div class="fil" id="fil"></div>
+ <div class="mas" id="mas"></div>
  <p class="note" data-t="w_note"></p>
 </div></section>
+
+
+
+<section id="clients" style="padding-bottom:0"><div class="wrap">
+ <div class="eyebrow" data-t="c_e"></div>
+ <h2 data-t="c_h"></h2><p class="sub" data-t="c_sub"></p>
+</div>
+ <div class="cph"><div class="tr" id="cph"></div></div>
+</section>
 
 <section id="reviews"><div class="wrap">
  <div class="rv-head"><div><div class="eyebrow" data-t="r_e"></div><h2 data-t="r_h"></h2></div>
   <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div class="chips" style="margin:0"><span class="chip"><b>4.9</b><span class="st">&#9733;</span><span>Booksy · 1328</span></span><span class="chip"><b>4.8</b><span class="st">&#9733;</span><span>Google · 386</span></span></div>
   <div class="arrows"><button type="button" id="prev" aria-label="Prev">&#8249;</button><button type="button" id="next" aria-label="Next">&#8250;</button></div></div></div>
  <div class="rvs" id="rvs"></div>
+ <div class="gcta rev"><div class="gs"><b>4.8</b><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+  <div class="gt"><span data-t="g_t"></span> (386)</div>
+  <a class="btn primary sm" href="https://search.google.com/local/writereview?placeid=ChIJQ53_cW5bFkcRNV4IDObp14A" target="_blank" rel="noopener" data-t="g_w"></a>
+  <a class="btn sm" href="https://www.google.com/maps/search/?api=1&query=Ta%D1%97na&query_place_id=ChIJQ53_cW5bFkcRNV4IDObp14A" target="_blank" rel="noopener" data-t="g_all"></a></div>
  <p class="note"><span data-t="r_note"></span> <a href="https://booksy.com/pl-pl/182394_taina-nails-beauty_salon-kosmetyczny_8820_krakow#business-reviews" target="_blank" rel="noopener" style="color:var(--acc)" data-t="r_all"></a></p>
 </div></section>
 
-<section id="team" style="background:var(--bg2)"><div class="wrap"><div class="eyebrow" data-t="t_e"></div><h2 data-t="t_h"></h2><div class="team"><div class="m rev"><div class="av">A</div><h3>Anna Diachenko</h3><p data-t="m_a"></p></div><div class="m rev"><div class="av">I</div><h3>Iryna</h3><p data-t="m_b"></p></div><div class="m rev"><div class="av">O</div><h3>Olga</h3><p data-t="m_c"></p></div><div class="m rev"><div class="av">M</div><h3>Mila</h3><p data-t="m_d"></p></div><div class="m rev"><div class="av">A</div><h3>Anastasia</h3><p data-t="m_e"></p></div><div class="m rev"><div class="av">S</div><h3>Sofiia</h3><p data-t="m_e"></p></div><div class="m rev"><div class="av">V</div><h3>Vika</h3><p data-t="m_a"></p></div><div class="m rev"><div class="av">Y</div><h3>Yulia</h3><p data-t="m_f"></p></div><div class="m rev"><div class="av">N</div><h3>Nata</h3><p data-t="m_d"></p></div><div class="m rev"><div class="av">E</div><h3>Eugenia</h3><p data-t="m_a"></p></div></div></div></section>
+<section id="perks" style="padding-top:0"><div class="wrap"><div class="eyebrow" data-t="pk_e"></div><h2 data-t="pk_h"></h2><div class="pk one"><div class="pkc rev"><h3 data-t="lo_h"></h3><p data-t="lo_p"></p><a class="btn" href="https://booksy.com/pl-pl/182394_taina-nails-beauty_salon-kosmetyczny_8820_krakow" target="_blank" rel="noopener" data-t="pk_btn"></a></div></div></div></section>
 
-<section id="visit"><div class="wrap">
+<section id="team" style="background:var(--bg2)"><div class="wrap"><div class="eyebrow" data-t="t_e"></div><h2 data-t="t_h"></h2><div class="team"><div class="m rev"><div class="ph"><img src="img/t/st-anna-diachenko.jpg" alt="" loading="lazy"></div><div class="t"><h3>Anna Diachenko</h3><p data-t="m_a"></p></div></div><div class="m rev"><div class="ph"><img src="img/t/st-iryna.jpg" alt="" loading="lazy"></div><div class="t"><h3>Iryna</h3><p data-t="m_b"></p></div></div><div class="m rev"><div class="ph"><img src="img/t/st-olga.jpg" alt="" loading="lazy"></div><div class="t"><h3>Olga</h3><p data-t="m_c"></p></div></div><div class="m rev"><div class="ph"><img src="img/t/st-mila.jpg" alt="" loading="lazy"></div><div class="t"><h3>Mila</h3><p data-t="m_d"></p></div></div><div class="m rev"><div class="ph"><img src="img/t/st-anastazja.jpg" alt="" loading="lazy"></div><div class="t"><h3>Anastasia</h3><p data-t="m_e"></p></div></div><div class="m rev"><div class="ph"><img src="img/t/st-sofiia.jpg" alt="" loading="lazy"></div><div class="t"><h3>Sofiia</h3><p data-t="m_e"></p></div></div><div class="m rev"><div class="ph"><img src="img/t/st-vika.jpg" alt="" loading="lazy"></div><div class="t"><h3>Vika</h3><p data-t="m_a"></p></div></div><div class="m rev"><div class="ph"><img src="img/t/st-yulia.jpg" alt="" loading="lazy"></div><div class="t"><h3>Yulia</h3><p data-t="m_f"></p></div></div><div class="m rev"><div class="ph"><img src="img/t/st-eugenia.jpg" alt="" loading="lazy"></div><div class="t"><h3>Eugenia</h3><p data-t="m_a"></p></div></div><div class="m rev"><div class="ph"><img src="img/t/st-mia.jpg" alt="" loading="lazy"></div><div class="t"><h3>Mia</h3><p data-t="m_g"></p></div></div></div></div></section>
+
+<section id="tips"><div class="wrap">
+ <div class="eyebrow" data-t="tp_e"></div><h2 data-t="tp_h"></h2><p class="sub" data-t="tp_sub"></p>
+ <div class="tips" id="tipl"></div><p class="tipnote" data-t="tp_note"></p>
+</div></section>
+
+<section id="faq"><div class="wrap">
+ <div class="eyebrow" data-t="q_e"></div><h2 data-t="q_h"></h2>
+ <div class="faq" id="faq-l"></div>
+</div></section>
+
+<section id="visit" style="background:var(--bg2)"><div class="wrap">
  <div class="eyebrow" data-t="v_e"></div>
  <h2 data-t="v_h"></h2>
  <div class="visit">
-  <div class="box rev"><h3 data-t="where"></h3><p class="addr">Lwowska 10, 30-548 Kraków (Podgórze)</p>
+  <div class="box rev" style="background:var(--bg)"><h3 data-t="where"></h3><p class="addr">Lwowska 10, 30-548 Kraków (Podgórze)</p>
    <p><a href="tel:+48732687181">+48 732 687 181</a></p>
    <div class="soc"></div>
    <div class="am"><span>Parking</span><span>Karty płatnicze</span><span>Wi-Fi</span><span>Program lojalnościowy</span><span>Dostępne dla niepełnosprawnych</span><span>Przyjazne dla dzieci</span></div>
    <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map" src="https://maps.google.com/maps?q=Lwowska+10,+30-548+Krak%C3%B3w&output=embed&z=16"></iframe></div>
-  <div class="box rev"><h3 data-t="hours"></h3><table id="hours"></table><p class="note" data-t="h_note"></p>
+  <div class="box rev" style="background:var(--bg)"><h3 data-t="hours"></h3><table id="hours"></table><p class="note" data-t="h_note"></p>
    <div style="margin-top:22px"><a class="btn primary" href="https://booksy.com/pl-pl/182394_taina-nails-beauty_salon-kosmetyczny_8820_krakow" target="_blank" rel="noopener" data-t="book"></a></div></div>
+  <div class="box rev rq" style="grid-column:1/-1;background:var(--bg)"><h3 data-t="fm_h"></h3><p class="sub" data-t="fm_sub"></p>
+   <form id="rqf" novalidate>
+    <label class="f"><span data-t="fm_name"></span><input name="name" autocomplete="name" required></label>
+    <label class="f"><span data-t="fm_tel"></span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+    <label class="f w"><span data-t="fm_svc"></span><select name="service" id="rq-s"></select></label>
+    <label class="f w"><span data-t="fm_msg"></span><textarea name="message"></textarea></label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label class="ag f w"><span style="display:flex;gap:10px"><input type="checkbox" name="agree" required><span data-t="fm_agree"></span></span></label>
+    <div class="f w"><button class="btn primary" type="submit" data-t="fm_send"></button></div>
+   </form><div class="ok" id="rq-ok" role="status"></div></div>
  </div>
 </div></section>
 
-<section style="padding-block:0 var(--sp)"><div class="wrap"><div class="final rev">
+<section style="padding-block:var(--sp)"><div class="wrap"><div class="final rev">
  <div class="decor" style="left:50%;top:-40px;width:260px;margin-left:-130px;opacity:.35"><svg viewBox="-200 -230 400 260" aria-hidden="true">
 <defs><linearGradient id="pgc" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ddac9e"/><stop offset="1" stop-color="#f6dcd6"/></linearGradient></defs>
 <g style="transform-origin:0 0;animation:sway 7s ease-in-out infinite">
@@ -274,48 +562,242 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <footer><div class="wrap"><span>&copy; <span id="y"></span> Taїna &middot; Kraków</span><span data-t="foot"></span></div></footer>
 <div class="sticky"><a class="btn primary" href="https://booksy.com/pl-pl/182394_taina-nails-beauty_salon-kosmetyczny_8820_krakow" target="_blank" rel="noopener" data-t="book"></a><a class="btn" href="tel:+48732687181" data-t="call"></a></div>
 <div class="demo-tag">Concept demo &middot; not live</div>
+<div class="sheet-bg" id="sheetbg"><div class="sheet" role="dialog" aria-modal="true"><button class="xx" id="shx" aria-label="Close">&times;</button>
+ <small class="eyebrow" data-t="sh_e"></small><h3 id="shn"></h3><div class="sm"><b id="shp"></b> <span id="sht"></span></div>
+ <ol><li data-t="sh_s1"></li><li><span data-t="sh_s2"></span> <b id="shn2"></b></li><li data-t="sh_s3"></li></ol>
+ <div class="bt"><a class="btn primary" id="shgo" href="https://booksy.com/pl-pl/182394_taina-nails-beauty_salon-kosmetyczny_8820_krakow" target="_blank" rel="noopener" data-t="sh_go"></a><button class="btn" id="shcp" type="button" data-t="sh_copy"></button></div>
+ <div class="sn" data-t="sh_note"></div></div></div>
+<div class="fab" id="fab"><a class="btn ph2" href="tel:+48732687181" aria-label="Call">&#9742;</a><a class="btn primary" href="https://booksy.com/pl-pl/182394_taina-nails-beauty_salon-kosmetyczny_8820_krakow" target="_blank" rel="noopener" data-t="book"></a></div>
+<div class="cur" id="cur"></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">&times;</button><button class="pv" aria-label="Prev">&#8249;</button><img id="lbi" alt=""><div class="lbc" id="lbc"><div><b id="lbt"></b><br><span id="lbs"></span></div><a id="lba" target="_blank" rel="noopener"></a></div><button class="nx" aria-label="Next">&#8250;</button></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 <script>
-const T={"uk": {"nav_s": "Послуги", "nav_a": "Про нас", "nav_r": "Відгуки", "nav_v": "Контакти", "book": "Записатися онлайн", "call": "Зателефонувати", "s_e": "Послуги та ціни", "s_h": "Прайс без сюрпризів", "s_sub": "Актуальні ціни з вашого запису в Booksy. Натисніть на послугу, щоб обрати час.", "s_note": "Ціни в злотих. Остаточну вартість визначає майстер.", "s_all": "Повний каталог у Booksy →", "more": "Усі послуги ({n})", "less": "Згорнути", "w_e": "Галерея", "w_note": "Приклад зображень (AI). У готовому сайті тут будуть ваші реальні роботи.", "r_e": "Відгуки", "r_h": "Що кажуть гості", "r_note": "Реальні відгуки з Booksy та Google.", "r_all": "Усі відгуки →", "v_e": "Контакти", "v_h": "Приходьте", "where": "Адреса", "hours": "Години роботи", "f_h": "Оберіть час, який вам зручний", "f_p": "Запис займає хвилину. Підтвердження прийде в Booksy.", "open_now": "Відчинено до {t}", "closed": "Зачинено · відчиняється {d}, {t}", "foot": "Концепт сайту. Дані з відкритих джерел.", "art": "Ілюстрація (AI) · тут будуть ваші фото", "h_note": "Години за даними Google. Уточнюйте в записі.", "t_e": "Команда", "eyebrow": "TAÏNA nails & beauty · Краків · Подгуже", "h1": "Б'юті-процедури як подія", "lead": "Манікюр, педикюр, брови, вії та макіяж. Українська гостинність на Lwowska 10.", "a_e": "Про нас", "a_h": "Чим є TAЇNA?", "a_p": "Слова самого салону з вашої сторінки в Booksy.", "p1h": "Високі стандарти", "p1p": "Працюють лише фахівці, яким можна довіряти. Перевірені матеріали й сертифікована система очищення інструментів.", "p2h": "Комфорт", "p2p": "Максимальна турбота про кожного гостя, враховуємо всі побажання.", "p3h": "Традиції", "p3p": "У салоні панує традиційна українська гостинність, яка огортає кожного гостя теплом і турботою про найдрібніші деталі.", "p4h": "Радість кожної миті", "p4p": "Життя це свято кожної хвилини. Навіть прості стандартні процедури стають подією, на яку чекаєш із нетерпінням.", "w_h": "Атмосфера і деталі", "w_sub": "Тепле світло, чисті лінії, турбота про деталі. Так може виглядати ваш салон онлайн.", "fl1l": "відгуків у Booksy", "t_h": "Майстри TAЇNA", "m_a": "Манікюр", "m_b": "Педикюр, подологія, манікюр", "m_c": "Манікюр і педикюр", "m_d": "Нарощення вій", "m_e": "Брови", "m_f": "Гелеві нарощення"}, "pl": {"nav_s": "Usługi", "nav_a": "O nas", "nav_r": "Opinie", "nav_v": "Kontakt", "book": "Umów wizytę online", "call": "Zadzwoń", "s_e": "Usługi i ceny", "s_h": "Cennik bez niespodzianek", "s_sub": "Aktualne ceny z Waszego kalendarza w Booksy. Kliknij usługę, aby wybrać termin.", "s_note": "Ceny w złotych. Ostateczny koszt ustala specjalistka.", "s_all": "Pełny katalog w Booksy →", "more": "Wszystkie usługi ({n})", "less": "Zwiń", "w_e": "Galeria", "w_note": "Przykładowe obrazy (AI). W gotowej stronie będą tu Wasze prawdziwe prace.", "r_e": "Opinie", "r_h": "Co mówią klientki", "r_note": "Prawdziwe opinie z Booksy i Google.", "r_all": "Wszystkie opinie →", "v_e": "Kontakt", "v_h": "Zapraszamy", "where": "Adres", "hours": "Godziny otwarcia", "f_h": "Wybierz termin, który Ci pasuje", "f_p": "Rezerwacja zajmuje minutę. Potwierdzenie przyjdzie z Booksy.", "open_now": "Otwarte do {t}", "closed": "Zamknięte · otwieramy {d}, {t}", "foot": "Koncepcja strony. Dane z publicznych źródeł.", "art": "Ilustracja (AI) · tu będą Wasze zdjęcia", "h_note": "Godziny wg Google. Sprawdź w rezerwacji.", "t_e": "Zespół", "eyebrow": "TAÏNA nails & beauty · Kraków · Podgórze", "h1": "Beauty zabiegi jako wydarzenie", "lead": "Manicure, pedicure, brwi, rzęsy i makijaż. Ukraińska gościnność przy Lwowskiej 10.", "a_e": "O nas", "a_h": "Czym jest TAЇNA?", "a_p": "Słowa samego salonu z Waszej strony w Booksy.", "p1h": "Wysokie standardy", "p1p": "Pracują tylko fachowcy, którym można zaufać. Sprawdzone materiały i certyfikowany system czyszczenia narzędzi.", "p2h": "Komfort", "p2p": "Maksymalna troska o każdego gościa, bierzemy pod uwagę wszystkie życzenia.", "p3h": "Tradycje", "p3p": "W salonie króluje tradycyjna ukraińska gościnność, która każdego gościa otacza ciepłem i troską o najdrobniejsze szczegóły.", "p4h": "Radość z każdej chwili", "p4p": "Życie to świętowanie każdej minuty. Nawet proste, standardowe zabiegi stają się wydarzeniem, na które czekasz z niecierpliwością.", "w_h": "Atmosfera i detale", "w_sub": "Ciepłe światło, czyste linie, dbałość o szczegóły. Tak może wyglądać Wasz salon online.", "fl1l": "opinii w Booksy", "t_h": "Zespół TAЇNA", "m_a": "Manicure", "m_b": "Pedicure, podologia, manicure", "m_c": "Manicure i pedicure", "m_d": "Przedłużanie rzęs", "m_e": "Brwi", "m_f": "Żel i przedłużanie"}};
-const CATS=[{"id": "mani", "uk": "Манікюр", "pl": "Manicure", "items": [{"n": "Manicure aparatowy (z odżywką/bez)", "p": "111,20", "from": false, "t": 60, "d": ""}, {"n": "Malowanie hybrydowe", "p": "68", "from": false, "t": 60, "d": ""}, {"n": "Malowanie lakierem", "p": "45", "from": false, "t": 30, "d": ""}, {"n": "Manicure hybrydowy", "p": "178", "from": false, "t": 120, "d": ""}, {"n": "Easy design", "p": "23", "from": false, "t": 15, "d": ""}, {"n": "Masaż dłoni z ciepłą świecą", "p": "16,70", "from": false, "t": 10, "d": ""}, {"n": "Usunięcie hybrydy + manicure kombinowany + lakier", "p": "167", "from": false, "t": 80, "d": ""}, {"n": "Hard design", "p": "28", "from": false, "t": 30, "d": ""}, {"n": "Manicure hybrydowy French", "p": "212", "from": false, "t": 150, "d": ""}, {"n": "Wzmocnienie", "p": "34", "from": false, "t": 15, "d": ""}, {"n": "Naprawa/wzmocnienie 1 paznokcia", "p": "12", "from": false, "t": 10, "d": ""}, {"n": "Przedłużenie 1 paznokcia", "p": "23", "from": false, "t": 30, "d": ""}, {"n": "French, Babyboomer", "p": "34", "from": false, "t": 30, "d": ""}, {"n": "Peeling dla rąk", "p": "16,70", "from": false, "t": 10, "d": ""}, {"n": "Art design", "p": "34", "from": false, "t": 30, "d": ""}, {"n": "Usunięcie hybrydy + malowanie hybrydowe", "p": "112", "from": false, "t": 90, "d": ""}, {"n": "Usunięcie żelu + nadał kształtu (manicure)", "p": "67", "from": false, "t": 40, "d": ""}, {"n": "Japoński manicure", "p": "128", "from": false, "t": 70, "d": ""}, {"n": "Manicure męski", "p": "123", "from": false, "t": 60, "d": ""}, {"n": "Manicure kombinowany (z odżywką/bez)", "p": "111,20", "from": false, "t": 60, "d": ""}, {"n": "Usunięcie hybrydy+ manicure kombinowany", "p": "134", "from": false, "t": 70, "d": ""}, {"n": "Manicure dziecięcy", "p": "45", "from": false, "t": 20, "d": ""}, {"n": "Usunięcie hybrydy + nadał kształtu (manicure)", "p": "45", "from": false, "t": 30, "d": ""}]}, {"id": "pedi", "uk": "Педикюр", "pl": "Pedicure", "items": [{"n": "Peeling dla stop", "p": "22,25", "from": false, "t": 10, "d": ""}, {"n": "Usunięcie hybrydy + pedicure klasyczny", "p": "156", "from": false, "t": 80, "d": ""}, {"n": "Pedicure klasyczny pelny (z opracowaniem piet)", "p": "145", "from": false, "t": 60, "d": ""}, {"n": "Pol pedicure klasyczny( opracowanie tylko palcow)", "p": "134", "from": false, "t": 60, "d": ""}, {"n": "Pedicure hybrydowy", "p": "200", "from": false, "t": 120, "d": ""}, {"n": "Usunięcie hybrydy + pedicure klasyczny + lakier", "p": "167", "from": false, "t": 90, "d": ""}, {"n": "Pedicure hybrydowy French", "p": "234", "from": false, "t": 150, "d": ""}, {"n": "Pedicure męski", "p": "156", "from": false, "t": 90, "d": ""}, {"n": "Naprawa 1 paznokcia", "p": "6", "from": false, "t": 15, "d": ""}, {"n": "Usunięcie hybrydy + nadał kształtu (pedicure)", "p": "45", "from": false, "t": 30, "d": ""}, {"n": "Pedicure hybrydowy (opracowanie tylko palcow)", "p": "178", "from": false, "t": 90, "d": ""}, {"n": "Opracowanie stóp + peeling", "p": "67", "from": false, "t": 15, "d": ""}, {"n": "Malowanie lakierem", "p": "45", "from": false, "t": 30, "d": ""}, {"n": "Manicure + pedicure", "p": "256,20", "from": false, "t": 60, "d": ""}, {"n": "Manicure hybrydowy+pedicure hybrydowy", "p": "378", "from": false, "t": 120, "d": ""}]}, {"id": "gel", "uk": "Нарощення й гель", "pl": "Żel i przedłużanie", "items": [{"n": "Uzupełnienie żelowe paznokci S", "p": "212", "from": false, "t": 120, "d": ""}, {"n": "Uzupełnienie żelowe paznokci M", "p": "234", "from": false, "t": 150, "d": ""}, {"n": "Uzupełnienie żelowe paznokci L", "p": "250", "from": false, "t": 180, "d": ""}, {"n": "Uzupełnienie żelowe paznokci XL", "p": "267", "from": false, "t": 180, "d": ""}, {"n": "Przedłużanie paznokci S", "p": "250", "from": false, "t": 180, "d": ""}, {"n": "Przedłużanie paznokci M", "p": "267", "from": false, "t": 180, "d": ""}, {"n": "Przedłużanie paznokci L", "p": "278", "from": false, "t": 180, "d": ""}]}, {"id": "brow", "uk": "Брови", "pl": "Brwi", "items": [{"n": "Regulacja brwi", "p": "56", "from": false, "t": 20, "d": ""}, {"n": "Farbowanie brwi", "p": "67", "from": false, "t": 30, "d": ""}, {"n": "Farbowanie + regulacja brwi", "p": "100", "from": false, "t": 50, "d": ""}, {"n": "Laminacja Brwi + regulacja + botoks", "p": "156", "from": false, "t": 70, "d": ""}, {"n": "Regulacja z przerzedzeniem", "p": "67", "from": false, "t": 25, "d": ""}, {"n": "Tonowanie brwi", "p": "34", "from": false, "t": 10, "d": ""}, {"n": "Laminacja brwi (regulacja + farbowanie + botoks)", "p": "167", "from": false, "t": 80, "d": ""}, {"n": "Laminacja brwi + lifting rzęs (bez farbowania)", "p": "300", "from": false, "t": 120, "d": ""}, {"n": "Laminacja brwi i rzęs (regulacja + farbowanie)", "p": "334", "from": false, "t": 130, "d": ""}]}, {"id": "lash", "uk": "Вії", "pl": "Rzęsy", "items": [{"n": "Farbowanie rzęs", "p": "45", "from": false, "t": 30, "d": ""}, {"n": "Laminacja rzęs + farbowanie", "p": "189", "from": false, "t": 90, "d": ""}, {"n": "Botoks O2 Pharm", "p": "45", "from": false, "t": 15, "d": ""}, {"n": "Laminacja rzęs", "p": "167", "from": false, "t": 80, "d": ""}, {"n": "Przedłużanie rzęs 1:1", "p": "178", "from": false, "t": 120, "d": ""}, {"n": "Przedłużanie rzęs 1.5 d", "p": "189", "from": false, "t": 120, "d": ""}, {"n": "Przedłużanie rzęs 2:1", "p": "200", "from": false, "t": 135, "d": ""}, {"n": "Przedłużanie rzęs 3:1", "p": "223", "from": false, "t": 150, "d": ""}, {"n": "Przedłużanie rzęs 4-5D", "p": "245", "from": false, "t": 150, "d": ""}, {"n": "Uzupełnienie rzęs do 2 tygodni 1:1", "p": "156", "from": false, "t": 120, "d": ""}, {"n": "Uzupełnienie rzęs do 3 tygodni 1.5 D", "p": "167", "from": false, "t": 120, "d": ""}, {"n": "Uzupełnienie rzęs do 3 tygodni 2:1", "p": "178", "from": false, "t": 120, "d": ""}, {"n": "Uzupełnienie rzęs do 3 tygodni 3:1", "p": "200", "from": false, "t": 120, "d": ""}, {"n": "Uzupełnienie rzęs do 3 tygodni 4-5 D", "p": "223", "from": false, "t": 135, "d": ""}, {"n": "Przedłużanie rzęs zewnętrznych kącików", "p": "123", "from": false, "t": 45, "d": ""}, {"n": "\"Efekt Kim Kardashian\" do przedłużania", "p": "23", "from": false, "t": 15, "d": ""}, {"n": "\"Mascara Cocktailing\" do przedłużania", "p": "23", "from": false, "t": 15, "d": ""}, {"n": "\"Efekt Wet Look\" do przedłużania", "p": "23", "from": false, "t": 15, "d": ""}, {"n": "\"Efekt Eyelinera\" do przedłużania", "p": "23", "from": false, "t": 15, "d": ""}, {"n": "\"Efekt Anime\" do przedłużania", "p": "23", "from": false, "t": 20, "d": ""}, {"n": "Ściągnięcie rzęs", "p": "45", "from": false, "t": 20, "d": ""}]}, {"id": "make", "uk": "Макіяж і зачіски", "pl": "Makijaż i fryzury", "items": [{"n": "Makijaż na wesele", "p": "389", "from": false, "t": 120, "d": ""}, {"n": "Makijaż dzienny", "p": "245", "from": false, "t": 60, "d": ""}, {"n": "Makijaż wieczorowy", "p": "278", "from": false, "t": 90, "d": ""}, {"n": "Loki - fale (włosy krótkie)", "p": "223", "from": false, "t": 60, "d": ""}, {"n": "Loki - fale (włosy długie)", "p": "245", "from": false, "t": 75, "d": ""}, {"n": "Loki dziecięce (włosy długie)", "p": "178", "from": false, "t": 75, "d": ""}, {"n": "Loki dziecięce (włosy krótkie)", "p": "156", "from": false, "t": 60, "d": ""}, {"n": "Fryzura \"Kok\"", "p": "278", "from": false, "t": 90, "d": ""}]}, {"id": "epil", "uk": "Депіляція", "pl": "Depilacja", "items": [{"n": "Wąsik + broda + regulacja brwi", "p": "111,10", "from": false, "t": 45, "d": ""}, {"n": "Depilacja Nosa (owłosienia w przegrodach nosowych)", "p": "34", "from": false, "t": 15, "d": ""}, {"n": "Regulacja Brwi (wosk)", "p": "56", "from": false, "t": 30, "d": ""}, {"n": "Depilacja brody", "p": "34", "from": false, "t": 30, "d": ""}, {"n": "Wąsik + broda + regulacja brwi z henną", "p": "133,90", "from": false, "t": 70, "d": ""}, {"n": "Wąsik + Broda", "p": "56", "from": false, "t": 30, "d": ""}, {"n": "Depilacja wąsika", "p": "34", "from": false, "t": 15, "d": ""}]}, {"id": "pod", "uk": "Подологія", "pl": "Podologia", "items": [{"n": "Konsultacja podologiczna (bez dalszego zabiegu)", "p": "56", "from": false, "t": 30, "d": ""}, {"n": "Pedicure podologiczny (bez hybrydy)", "p": "167", "from": false, "t": 70, "d": ""}, {"n": "Pedicure podologiczny (hybrydowy)", "p": "212", "from": false, "t": 120, "d": ""}, {"n": "Opracowanie popękanych pięt/pęknięć/rozpadlin", "p": "106", "from": false, "t": 30, "d": ""}, {"n": "Usunięcie modzeli/nagniotków (bez pedicure)", "p": "106", "from": false, "t": 30, "d": ""}, {"n": "Opracowanie onycholizy (bez pedicure)", "p": "106", "from": false, "t": 30, "d": ""}, {"n": "Opracowanie onycholizy (jeden palec)", "p": "45", "from": false, "t": 15, "d": ""}]}];
-const REV=[{"n": "Olena", "svc": "Manicure hybrydowy", "src": "Booksy", "uk": "Чудовий манікюр! Дуже задоволена роботою Анни 💛", "pl": "Wspaniały manicure! Bardzo zadowolona z pracy Anny 💛"}, {"n": "Katarzyna", "svc": "Przedłużenie 1 paznokcia", "src": "Booksy", "uk": "Обслуговування на найвищому рівні 👌 Майстрині завжди знаходять для мене час 🙏 Дякую", "pl": "Obsługa na najwyższym poziomie 👌 Panie zawsze dla mnie znajdują czas 🙏 Dziękuję"}, {"n": "Alinka", "svc": "Pedicure klasyczny", "src": "Booksy", "uk": "Чудовий педикюр і приємна атмосфера. Усе чисто, ретельно й професійно. Дуже рекомендую!", "pl": "Świetny pedicure i miła atmosfera. Wszystko czysto, dokładnie i profesjonalnie. Bardzo polecam!"}, {"n": "Liza", "svc": "Manicure hybrydowy", "src": "Booksy", "uk": "Все було чудово, Анна — професіонал та дуже приємна дівчина 👍🏻", "pl": "Wszystko było wspaniale, Anna to profesjonalistka i bardzo miła dziewczyna 👍🏻"}, {"n": "Julia", "svc": "Manicure hybrydowy, Art design", "src": "Booksy", "uk": "Ідеальна весільна стилізація від пані Ірини, у яку я закохалася з першого погляду :)", "pl": "Idealna stylizacja ślubna od Pani Iryny, w której zakochałam się od pierwszego wejrzenia :)"}, {"n": "Anna Z.", "svc": "Przedłużanie rzęs", "src": "Google", "uk": "Нарощення вій виконано дуже акуратно, вії виглядають ідеально та підкреслюють погляд.", "pl": "Przedłużenie rzęs wykonane bardzo starannie, rzęsy wyglądają idealnie i podkreślają spojrzenie."}, {"n": "Марія", "svc": "Manicure hybrydowy", "src": "Booksy", "uk": "Дуже приємна і хороша майстриня Анна :) Якісно та швидко!", "pl": "Bardzo miła i dobra mistrzyni Anna :) Jakościowo i szybko!"}, {"n": "Mia", "svc": "Manicure hybrydowy", "src": "Booksy", "uk": "Дякую за гарні нігті й кавусю ♥", "pl": "Dziękuję za piękne paznokcie i kawkę ♥"}];
+const TX={"uk": {"nav_s": "Послуги", "nav_a": "Про нас", "nav_r": "Відгуки", "nav_v": "Контакти", "book": "Записатися онлайн", "call": "Зателефонувати", "s_e": "Послуги та ціни", "s_h": "Прайс без сюрпризів", "s_sub": "Актуальні ціни з вашого запису в Booksy. Натисніть на послугу, щоб обрати час.", "s_note": "Ціни в злотих. Остаточну вартість визначає майстер.", "s_all": "Повний каталог у Booksy →", "more": "Усі послуги ({n})", "less": "Згорнути", "w_e": "Портфоліо", "w_note": "Фото з вашої публічної сторінки Booksy. Для запуску замінимо на ваші погоджені знімки.", "r_e": "Відгуки", "r_h": "Що кажуть гості", "r_note": "Реальні відгуки з Booksy та Google. Імена скорочено до імені.", "r_all": "Усі відгуки →", "v_e": "Контакти", "v_h": "Приходьте", "where": "Адреса", "hours": "Години роботи", "f_h": "Оберіть час, який вам зручний", "f_p": "Запис займає хвилину. Підтвердження прийде в Booksy.", "open_now": "Відчинено до {t}", "closed": "Зачинено · відчиняється {d}, {t}", "foot": "Концепт сайту. Дані з відкритих джерел.", "art": "Ілюстрація (AI) · тут будуть ваші фото", "h_note": "Години за даними Google. Уточнюйте в записі.", "t_e": "Команда", "nav_w": "Роботи", "all": "Усе", "c_e": "Живі фото", "c_h": "Фото, які додають самі клієнти", "c_sub": "Знімки з відгуків у Booksy: реальні нігті, реальні гості.", "q_e": "Питання", "q_h": "Корисно знати", "ct_e": "Категорії", "ct_h": "Оберіть напрям", "ct_sub": "Натисніть на категорію, щоб побачити послуги й ціни.", "sv_w": ["послуга", "послуги", "послуг"], "lb_book": "Записатися на цю послугу", "pop_t": "Популярне", "cue": "скрольте", "re_e": "Стрічка робіт", "re_h": "Листайте, щоб побачити", "re_sub": "Реальні роботи майстринь з вашого Booksy.", "re_hint": "скрольте вниз", "st1": "послуг у каталозі", "st2": "майстрів у команді", "st3": "відгуків у Booksy", "team_n": "Наша команда", "team_s": "на сайті нижче", "eyebrow": "TAÏNA nails & beauty · Краків · Подгуже", "h1": "Б'юті-процедури як подія", "lead": "Манікюр, педикюр, брови, вії та макіяж. Українська гостинність на Lwowska 10.", "a_e": "Про нас", "a_h": "Чим є TAЇNA?", "a_p": "Слова самого салону з вашої сторінки в Booksy.", "p1h": "Високі стандарти", "p1p": "Працюють лише фахівці, яким можна довіряти. Перевірені матеріали й сертифікована система очищення інструментів.", "p2h": "Комфорт", "p2p": "Максимальна турбота про кожного гостя, враховуємо всі побажання.", "p3h": "Традиції", "p3p": "У салоні панує традиційна українська гостинність, яка огортає кожного гостя теплом і турботою про найдрібніші деталі.", "p4h": "Радість кожної миті", "p4p": "Життя це свято кожної хвилини. Навіть прості стандартні процедури стають подією, на яку чекаєш із нетерпінням.", "w_h": "Наші роботи", "w_sub": "Манікюр, педикюр, брови, вії та зачіски: справжні роботи майстринь.", "fl1l": "відгуків у Booksy", "t_h": "Майстри TAЇNA", "m_a": "Манікюр", "m_b": "Педикюр, подологія, манікюр", "m_c": "Манікюр і педикюр", "m_d": "Нарощення вій", "m_e": "Брови", "m_f": "Гелеві нарощення", "mf": "Життя це свято кожної хвилини. Тому навіть прості процедури в TAÏNA стають подією, на яку чекаєш із нетерпінням.", "mf_by": "З вашої сторінки в Booksy", "m_g": "Адміністратор", "how_e": "Як це працює", "how_h": "Запис за три кроки", "how_sub": "Без дзвінків і очікування: усе за хвилину.", "h1t": "Оберіть послугу", "h1p": "Перегляньте прайс або фото робіт і натисніть на потрібну послугу.", "h2t": "Запишіться в Booksy", "h2p": "Оберіть майстра й час. Підтвердження прийде в Booksy.", "h3t": "Приходьте", "h3p": "Адреса й карта нижче на сторінці. Чекаємо у ваш час.", "sh_e": "Ваш запис", "sh_s1": "Натисніть «Продовжити в Booksy»", "sh_s2": "У каталозі оберіть:", "sh_s3": "Оберіть майстра, час і підтвердіть запис", "sh_go": "Продовжити в Booksy", "sh_copy": "Скопіювати назву послуги", "sh_copied": "Скопійовано ✓", "sh_note": "Booksy відкриється в новій вкладці. Послугу потрібно обрати там: пряме посилання на окрему послугу Booksy не надає.", "g_t": "Оцінка у Google за відгуками клієнтів", "g_w": "Залишити відгук у Google", "g_all": "Дивитись у Google Maps", "st_e": "Стиль", "st_h": "Класика чи дизайн?", "st_sub": "Потягніть повзунок: два стилі з реальних робіт вашого Booksy.", "cl_a": "Дизайн", "cl_b": "Класика", "st_note": "Це дві різні роботи, а не «до» й «після» однієї руки.", "pk_e": "Бонуси", "pk_h": "Більше за візит", "pk_btn": "Умови в Booksy", "lo_h": "Програма лояльності", "lo_p": "У салоні діє програма лояльності (за даними Booksy). Умови дивіться під час запису.", "gi_h": "Подарункові карти", "gi_p": "Подаруйте догляд: у Booksy студії доступні подарункові карти.", "gi_btn": "Подарункові карти", "tp_e": "Поради", "tp_h": "Корисно знати", "tp_sub": "Короткі поради від майстрів. Натисніть на картку, щоб розгорнути.", "tp_more": "Читати", "tp_note": "Загальні поради. Індивідуальні рекомендації дає ваш майстер.", "fm_h": "Залишити заявку", "fm_sub": "Не користуєтесь Booksy? Напишіть, ми передзвонимо й підберемо час.", "fm_name": "Імʼя", "fm_tel": "Телефон", "fm_svc": "Послуга (необовʼязково)", "fm_any": "Не обрано", "fm_msg": "Коментар", "fm_agree": "Погоджуюсь на обробку даних для звʼязку щодо запису.", "fm_send": "Надіслати заявку", "fm_err": "Заповніть імʼя, телефон і позначте згоду.", "fm_ok": "Дякуємо! Ми звʼяжемось із вами.", "fm_demo": "Дякуємо, {n}! Це демо: заявка нікуди не надсилається. У робочій версії вона прийде вам на пошту.", "pm_e": "Перманентний макіяж", "pm_h": "Брови й губи, які виглядають природно", "pm_sub": "Техніки й ціни зі студії. Консультація і корекція доступні в Booksy.", "pm_lips": "Губи", "pm_brows": "Брови", "pm_f1": "Консультація", "pm_f1p": "Обговорюємо побажання й протипоказання.", "pm_f2": "Ескіз і колір", "pm_f2p": "Підбираємо форму й відтінок.", "pm_f3": "Процедура", "pm_f3p": "Виконуємо обрану техніку.", "pm_f4": "Корекція", "pm_f4p": "Є окремі записи на корекцію й оновлення.", "pm_nt": "Типовий порядок. Деталі уточнює майстер на консультації.", "pc": {"n": "Манікюр", "p": "Педикюр", "b": "Брови й вії", "h": "Макіяж і зачіски"}}, "pl": {"nav_s": "Usługi", "nav_a": "O nas", "nav_r": "Opinie", "nav_v": "Kontakt", "book": "Umów wizytę online", "call": "Zadzwoń", "s_e": "Usługi i ceny", "s_h": "Cennik bez niespodzianek", "s_sub": "Aktualne ceny z Waszego kalendarza w Booksy. Kliknij usługę, aby wybrać termin.", "s_note": "Ceny w złotych. Ostateczny koszt ustala specjalistka.", "s_all": "Pełny katalog w Booksy →", "more": "Wszystkie usługi ({n})", "less": "Zwiń", "w_e": "Portfolio", "w_note": "Zdjęcia z Waszej publicznej strony Booksy. Na start zamienimy je na zatwierdzone przez Was.", "r_e": "Opinie", "r_h": "Co mówią klientki", "r_note": "Prawdziwe opinie z Booksy i Google. Imiona skrócone do imienia.", "r_all": "Wszystkie opinie →", "v_e": "Kontakt", "v_h": "Zapraszamy", "where": "Adres", "hours": "Godziny otwarcia", "f_h": "Wybierz termin, który Ci pasuje", "f_p": "Rezerwacja zajmuje minutę. Potwierdzenie przyjdzie z Booksy.", "open_now": "Otwarte do {t}", "closed": "Zamknięte · otwieramy {d}, {t}", "foot": "Koncepcja strony. Dane z publicznych źródeł.", "art": "Ilustracja (AI) · tu będą Wasze zdjęcia", "h_note": "Godziny wg Google. Sprawdź w rezerwacji.", "t_e": "Zespół", "nav_w": "Realizacje", "all": "Wszystko", "c_e": "Prawdziwe zdjęcia", "c_h": "Zdjęcia dodawane przez klientki", "c_sub": "Zdjęcia z opinii w Booksy: prawdziwe paznokcie, prawdziwe klientki.", "q_e": "Pytania", "q_h": "Warto wiedzieć", "ct_e": "Kategorie", "ct_h": "Wybierz kierunek", "ct_sub": "Kliknij kategorię, aby zobaczyć usługi i ceny.", "sv_w": ["usługa", "usługi", "usług"], "lb_book": "Umów tę usługę", "pop_t": "Popularne", "cue": "przewiń", "re_e": "Taśma prac", "re_h": "Przewijaj, aby zobaczyć", "re_sub": "Prawdziwe prace specjalistek z Waszego Booksy.", "re_hint": "przewijaj w dół", "st1": "usług w ofercie", "st2": "specjalistek w zespole", "st3": "opinii w Booksy", "team_n": "Nasz zespół", "team_s": "poniżej na stronie", "eyebrow": "TAÏNA nails & beauty · Kraków · Podgórze", "h1": "Beauty zabiegi jako wydarzenie", "lead": "Manicure, pedicure, brwi, rzęsy i makijaż. Ukraińska gościnność przy Lwowskiej 10.", "a_e": "O nas", "a_h": "Czym jest TAЇNA?", "a_p": "Słowa samego salonu z Waszej strony w Booksy.", "p1h": "Wysokie standardy", "p1p": "Pracują tylko fachowcy, którym można zaufać. Sprawdzone materiały i certyfikowany system czyszczenia narzędzi.", "p2h": "Komfort", "p2p": "Maksymalna troska o każdego gościa, bierzemy pod uwagę wszystkie życzenia.", "p3h": "Tradycje", "p3p": "W salonie króluje tradycyjna ukraińska gościnność, która każdego gościa otacza ciepłem i troską o najdrobniejsze szczegóły.", "p4h": "Radość z każdej chwili", "p4p": "Życie to świętowanie każdej minuty. Nawet proste, standardowe zabiegi stają się wydarzeniem, na które czekasz z niecierpliwością.", "w_h": "Nasze prace", "w_sub": "Manicure, pedicure, brwi, rzęsy i fryzury: prawdziwe prace naszych specjalistek.", "fl1l": "opinii w Booksy", "t_h": "Zespół TAЇNA", "m_a": "Manicure", "m_b": "Pedicure, podologia, manicure", "m_c": "Manicure i pedicure", "m_d": "Przedłużanie rzęs", "m_e": "Brwi", "m_f": "Żel i przedłużanie", "mf": "Życie to świętowanie każdej minuty. Dlatego nawet proste zabiegi w TAÏNA stają się wydarzeniem, na które czekasz z niecierpliwością.", "mf_by": "Z Waszej strony w Booksy", "m_g": "Administracja", "how_e": "Jak to działa", "how_h": "Rezerwacja w trzech krokach", "how_sub": "Bez telefonów i czekania: wszystko w minutę.", "h1t": "Wybierz usługę", "h1p": "Przejrzyj cennik lub zdjęcia prac i kliknij wybraną usługę.", "h2t": "Umów w Booksy", "h2p": "Wybierz specjalistkę i godzinę. Potwierdzenie przyjdzie z Booksy.", "h3t": "Przyjdź", "h3p": "Adres i mapa poniżej na stronie. Czekamy o wybranej porze.", "sh_e": "Twoja rezerwacja", "sh_s1": "Kliknij „Przejdź do Booksy”", "sh_s2": "W katalogu wybierz:", "sh_s3": "Wybierz specjalistkę, godzinę i potwierdź", "sh_go": "Przejdź do Booksy", "sh_copy": "Skopiuj nazwę usługi", "sh_copied": "Skopiowano ✓", "sh_note": "Booksy otworzy się w nowej karcie. Usługę trzeba wybrać tam: Booksy nie daje bezpośredniego linku do pojedynczej usługi.", "g_t": "Ocena w Google na podstawie opinii klientek", "g_w": "Dodaj opinię w Google", "g_all": "Zobacz w Google Maps", "st_e": "Styl", "st_h": "Klasyka czy design?", "st_sub": "Przeciągnij suwak: dwa style z prawdziwych prac z Waszego Booksy.", "cl_a": "Design", "cl_b": "Klasyka", "st_note": "To dwie różne prace, a nie „przed” i „po” tej samej dłoni.", "pk_e": "Bonusy", "pk_h": "Więcej za wizytę", "pk_btn": "Zasady w Booksy", "lo_h": "Program lojalnościowy", "lo_p": "W salonie działa program lojalnościowy (wg Booksy). Zasady zobaczysz przy rezerwacji.", "gi_h": "Karty podarunkowe", "gi_p": "Podaruj dbanie o siebie: w Booksy studia dostępne są karty podarunkowe.", "gi_btn": "Karty podarunkowe", "tp_e": "Porady", "tp_h": "Warto wiedzieć", "tp_sub": "Krótkie porady specjalistek. Kliknij kartę, aby rozwinąć.", "tp_more": "Czytaj", "tp_note": "Porady ogólne. Indywidualne zalecenia da Twoja specjalistka.", "fm_h": "Zostaw zgłoszenie", "fm_sub": "Nie korzystasz z Booksy? Napisz, oddzwonimy i dobierzemy termin.", "fm_name": "Imię", "fm_tel": "Telefon", "fm_svc": "Usługa (opcjonalnie)", "fm_any": "Nie wybrano", "fm_msg": "Komentarz", "fm_agree": "Zgadzam się na przetwarzanie danych w celu kontaktu w sprawie wizyty.", "fm_send": "Wyślij zgłoszenie", "fm_err": "Uzupełnij imię, telefon i zaznacz zgodę.", "fm_ok": "Dziękujemy! Skontaktujemy się z Tobą.", "fm_demo": "Dziękujemy, {n}! To demo: zgłoszenie nie jest nigdzie wysyłane. W wersji roboczej trafi na Wasz e-mail.", "pm_e": "Makijaż permanentny", "pm_h": "Brwi i usta, które wyglądają naturalnie", "pm_sub": "Techniki i ceny ze studia. Konsultacja i korekta dostępne w Booksy.", "pm_lips": "Usta", "pm_brows": "Brwi", "pm_f1": "Konsultacja", "pm_f1p": "Omawiamy oczekiwania i przeciwwskazania.", "pm_f2": "Szkic i kolor", "pm_f2p": "Dobieramy kształt i odcień.", "pm_f3": "Zabieg", "pm_f3p": "Wykonujemy wybraną technikę.", "pm_f4": "Korekta", "pm_f4p": "Są osobne rezerwacje na korektę i odświeżenie.", "pm_nt": "Typowy przebieg. Szczegóły ustala specjalistka na konsultacji.", "pc": {"n": "Manicure", "p": "Pedicure", "b": "Brwi i rzęsy", "h": "Makijaż i fryzury"}}};
+const CATS=[{"id": "mani", "uk": "Манікюр", "pl": "Manicure", "items": [{"n": "Manicure aparatowy (z odżywką/bez)", "p": "111,20", "from": false, "t": 60, "d": ""}, {"n": "Malowanie hybrydowe", "p": "68", "from": false, "t": 60, "d": ""}, {"n": "Malowanie lakierem", "p": "45", "from": false, "t": 30, "d": ""}, {"n": "Manicure hybrydowy", "p": "178", "from": false, "t": 120, "d": ""}, {"n": "Easy design", "p": "23", "from": false, "t": 15, "d": ""}, {"n": "Masaż dłoni z ciepłą świecą", "p": "16,70", "from": false, "t": 10, "d": ""}, {"n": "Usunięcie hybrydy + manicure kombinowany + lakier", "p": "167", "from": false, "t": 80, "d": ""}, {"n": "Hard design", "p": "28", "from": false, "t": 30, "d": ""}, {"n": "Manicure hybrydowy French", "p": "212", "from": false, "t": 150, "d": ""}, {"n": "Wzmocnienie", "p": "34", "from": false, "t": 15, "d": ""}, {"n": "Naprawa/wzmocnienie 1 paznokcia", "p": "12", "from": false, "t": 10, "d": ""}, {"n": "Przedłużenie 1 paznokcia", "p": "23", "from": false, "t": 30, "d": ""}, {"n": "French, Babyboomer", "p": "34", "from": false, "t": 30, "d": ""}, {"n": "Peeling dla rąk", "p": "16,70", "from": false, "t": 10, "d": ""}, {"n": "Art design", "p": "34", "from": false, "t": 30, "d": ""}, {"n": "Usunięcie hybrydy + malowanie hybrydowe", "p": "112", "from": false, "t": 90, "d": ""}, {"n": "Usunięcie żelu + nadał kształtu (manicure)", "p": "67", "from": false, "t": 40, "d": ""}, {"n": "Japoński manicure", "p": "128", "from": false, "t": 70, "d": ""}, {"n": "Manicure męski", "p": "123", "from": false, "t": 60, "d": ""}, {"n": "Manicure kombinowany (z odżywką/bez)", "p": "111,20", "from": false, "t": 60, "d": ""}, {"n": "Usunięcie hybrydy+ manicure kombinowany", "p": "134", "from": false, "t": 70, "d": ""}, {"n": "Manicure dziecięcy", "p": "45", "from": false, "t": 20, "d": ""}, {"n": "Usunięcie hybrydy + nadał kształtu (manicure)", "p": "45", "from": false, "t": 30, "d": ""}], "ph": ["t/n1.jpg", "t/n3.jpg", "t/n7.jpg"]}, {"id": "pedi", "uk": "Педикюр", "pl": "Pedicure", "items": [{"n": "Peeling dla stop", "p": "22,25", "from": false, "t": 10, "d": ""}, {"n": "Usunięcie hybrydy + pedicure klasyczny", "p": "156", "from": false, "t": 80, "d": ""}, {"n": "Pedicure klasyczny pelny (z opracowaniem piet)", "p": "145", "from": false, "t": 60, "d": ""}, {"n": "Pol pedicure klasyczny( opracowanie tylko palcow)", "p": "134", "from": false, "t": 60, "d": ""}, {"n": "Pedicure hybrydowy", "p": "200", "from": false, "t": 120, "d": ""}, {"n": "Usunięcie hybrydy + pedicure klasyczny + lakier", "p": "167", "from": false, "t": 90, "d": ""}, {"n": "Pedicure hybrydowy French", "p": "234", "from": false, "t": 150, "d": ""}, {"n": "Pedicure męski", "p": "156", "from": false, "t": 90, "d": ""}, {"n": "Naprawa 1 paznokcia", "p": "6", "from": false, "t": 15, "d": ""}, {"n": "Usunięcie hybrydy + nadał kształtu (pedicure)", "p": "45", "from": false, "t": 30, "d": ""}, {"n": "Pedicure hybrydowy (opracowanie tylko palcow)", "p": "178", "from": false, "t": 90, "d": ""}, {"n": "Opracowanie stóp + peeling", "p": "67", "from": false, "t": 15, "d": ""}, {"n": "Malowanie lakierem", "p": "45", "from": false, "t": 30, "d": ""}, {"n": "Manicure + pedicure", "p": "256,20", "from": false, "t": 60, "d": ""}, {"n": "Manicure hybrydowy+pedicure hybrydowy", "p": "378", "from": false, "t": 120, "d": ""}], "ph": ["t/p1.jpg", "t/p2.jpg", "t/p3.jpg"]}, {"id": "gel", "uk": "Нарощення й гель", "pl": "Żel i przedłużanie", "items": [{"n": "Uzupełnienie żelowe paznokci S", "p": "212", "from": false, "t": 120, "d": ""}, {"n": "Uzupełnienie żelowe paznokci M", "p": "234", "from": false, "t": 150, "d": ""}, {"n": "Uzupełnienie żelowe paznokci L", "p": "250", "from": false, "t": 180, "d": ""}, {"n": "Uzupełnienie żelowe paznokci XL", "p": "267", "from": false, "t": 180, "d": ""}, {"n": "Przedłużanie paznokci S", "p": "250", "from": false, "t": 180, "d": ""}, {"n": "Przedłużanie paznokci M", "p": "267", "from": false, "t": 180, "d": ""}, {"n": "Przedłużanie paznokci L", "p": "278", "from": false, "t": 180, "d": ""}], "ph": ["t/n5.jpg", "t/n9.jpg", "t/n10.jpg"]}, {"id": "brow", "uk": "Брови", "pl": "Brwi", "items": [{"n": "Regulacja brwi", "p": "56", "from": false, "t": 20, "d": ""}, {"n": "Farbowanie brwi", "p": "67", "from": false, "t": 30, "d": ""}, {"n": "Farbowanie + regulacja brwi", "p": "100", "from": false, "t": 50, "d": ""}, {"n": "Laminacja Brwi + regulacja + botoks", "p": "156", "from": false, "t": 70, "d": ""}, {"n": "Regulacja z przerzedzeniem", "p": "67", "from": false, "t": 25, "d": ""}, {"n": "Tonowanie brwi", "p": "34", "from": false, "t": 10, "d": ""}, {"n": "Laminacja brwi (regulacja + farbowanie + botoks)", "p": "167", "from": false, "t": 80, "d": ""}, {"n": "Laminacja brwi + lifting rzęs (bez farbowania)", "p": "300", "from": false, "t": 120, "d": ""}, {"n": "Laminacja brwi i rzęs (regulacja + farbowanie)", "p": "334", "from": false, "t": 130, "d": ""}], "ph": ["t/b1.jpg", "t/m1.jpg"]}, {"id": "lash", "uk": "Вії", "pl": "Rzęsy", "items": [{"n": "Farbowanie rzęs", "p": "45", "from": false, "t": 30, "d": ""}, {"n": "Laminacja rzęs + farbowanie", "p": "189", "from": false, "t": 90, "d": ""}, {"n": "Botoks O2 Pharm", "p": "45", "from": false, "t": 15, "d": ""}, {"n": "Laminacja rzęs", "p": "167", "from": false, "t": 80, "d": ""}, {"n": "Przedłużanie rzęs 1:1", "p": "178", "from": false, "t": 120, "d": ""}, {"n": "Przedłużanie rzęs 1.5 d", "p": "189", "from": false, "t": 120, "d": ""}, {"n": "Przedłużanie rzęs 2:1", "p": "200", "from": false, "t": 135, "d": ""}, {"n": "Przedłużanie rzęs 3:1", "p": "223", "from": false, "t": 150, "d": ""}, {"n": "Przedłużanie rzęs 4-5D", "p": "245", "from": false, "t": 150, "d": ""}, {"n": "Uzupełnienie rzęs do 2 tygodni 1:1", "p": "156", "from": false, "t": 120, "d": ""}, {"n": "Uzupełnienie rzęs do 3 tygodni 1.5 D", "p": "167", "from": false, "t": 120, "d": ""}, {"n": "Uzupełnienie rzęs do 3 tygodni 2:1", "p": "178", "from": false, "t": 120, "d": ""}, {"n": "Uzupełnienie rzęs do 3 tygodni 3:1", "p": "200", "from": false, "t": 120, "d": ""}, {"n": "Uzupełnienie rzęs do 3 tygodni 4-5 D", "p": "223", "from": false, "t": 135, "d": ""}, {"n": "Przedłużanie rzęs zewnętrznych kącików", "p": "123", "from": false, "t": 45, "d": ""}, {"n": "\"Efekt Kim Kardashian\" do przedłużania", "p": "23", "from": false, "t": 15, "d": ""}, {"n": "\"Mascara Cocktailing\" do przedłużania", "p": "23", "from": false, "t": 15, "d": ""}, {"n": "\"Efekt Wet Look\" do przedłużania", "p": "23", "from": false, "t": 15, "d": ""}, {"n": "\"Efekt Eyelinera\" do przedłużania", "p": "23", "from": false, "t": 15, "d": ""}, {"n": "\"Efekt Anime\" do przedłużania", "p": "23", "from": false, "t": 20, "d": ""}, {"n": "Ściągnięcie rzęs", "p": "45", "from": false, "t": 20, "d": ""}], "ph": ["t/l1.jpg", "t/l2.jpg", "t/l3.jpg"]}, {"id": "make", "uk": "Макіяж і зачіски", "pl": "Makijaż i fryzury", "items": [{"n": "Makijaż na wesele", "p": "389", "from": false, "t": 120, "d": ""}, {"n": "Makijaż dzienny", "p": "245", "from": false, "t": 60, "d": ""}, {"n": "Makijaż wieczorowy", "p": "278", "from": false, "t": 90, "d": ""}, {"n": "Loki - fale (włosy krótkie)", "p": "223", "from": false, "t": 60, "d": ""}, {"n": "Loki - fale (włosy długie)", "p": "245", "from": false, "t": 75, "d": ""}, {"n": "Loki dziecięce (włosy długie)", "p": "178", "from": false, "t": 75, "d": ""}, {"n": "Loki dziecięce (włosy krótkie)", "p": "156", "from": false, "t": 60, "d": ""}, {"n": "Fryzura \"Kok\"", "p": "278", "from": false, "t": 90, "d": ""}], "ph": ["t/h1.jpg", "t/m1.jpg"]}, {"id": "epil", "uk": "Депіляція", "pl": "Depilacja", "items": [{"n": "Wąsik + broda + regulacja brwi", "p": "111,10", "from": false, "t": 45, "d": ""}, {"n": "Depilacja Nosa (owłosienia w przegrodach nosowych)", "p": "34", "from": false, "t": 15, "d": ""}, {"n": "Regulacja Brwi (wosk)", "p": "56", "from": false, "t": 30, "d": ""}, {"n": "Depilacja brody", "p": "34", "from": false, "t": 30, "d": ""}, {"n": "Wąsik + broda + regulacja brwi z henną", "p": "133,90", "from": false, "t": 70, "d": ""}, {"n": "Wąsik + Broda", "p": "56", "from": false, "t": 30, "d": ""}, {"n": "Depilacja wąsika", "p": "34", "from": false, "t": 15, "d": ""}], "ph": []}, {"id": "pod", "uk": "Подологія", "pl": "Podologia", "items": [{"n": "Konsultacja podologiczna (bez dalszego zabiegu)", "p": "56", "from": false, "t": 30, "d": ""}, {"n": "Pedicure podologiczny (bez hybrydy)", "p": "167", "from": false, "t": 70, "d": ""}, {"n": "Pedicure podologiczny (hybrydowy)", "p": "212", "from": false, "t": 120, "d": ""}, {"n": "Opracowanie popękanych pięt/pęknięć/rozpadlin", "p": "106", "from": false, "t": 30, "d": ""}, {"n": "Usunięcie modzeli/nagniotków (bez pedicure)", "p": "106", "from": false, "t": 30, "d": ""}, {"n": "Opracowanie onycholizy (bez pedicure)", "p": "106", "from": false, "t": 30, "d": ""}, {"n": "Opracowanie onycholizy (jeden palec)", "p": "45", "from": false, "t": 15, "d": ""}], "ph": []}];
+const REV=[{"n": "Olena", "a": "t/av-olena.jpg", "d": "9 жовтня 2026", "svc": "Manicure hybrydowy", "src": "Booksy", "uk": "Чудовий манікюр! Дуже задоволена роботою Анни 💛", "pl": "Wspaniały manicure! Bardzo zadowolona z pracy Anny 💛"}, {"n": "Katarzyna", "d": "2 жовтня 2026", "svc": "Przedłużenie 1 paznokcia", "src": "Booksy", "uk": "Обслуговування на найвищому рівні 👌 Майстрині завжди знаходять для мене час 🙏 Дякую", "pl": "Obsługa na najwyższym poziomie 👌 Panie zawsze dla mnie znajdują czas 🙏 Dziękuję"}, {"n": "Alinka", "d": "10 вересня 2026", "svc": "Pedicure klasyczny", "src": "Booksy", "uk": "Чудовий педикюр і приємна атмосфера. Усе чисто, ретельно й професійно. Дуже рекомендую!", "pl": "Świetny pedicure i miła atmosfera. Wszystko czysto, dokładnie i profesjonalnie. Bardzo polecam!"}, {"n": "Liza", "d": "23 вересня 2026", "svc": "Manicure hybrydowy", "src": "Booksy", "uk": "Все було чудово, Анна — професіонал та дуже приємна дівчина 👍🏻", "pl": "Wszystko było wspaniale, Anna to profesjonalistka i bardzo miła dziewczyna 👍🏻"}, {"n": "Julia", "d": "14 вересня 2026", "svc": "Manicure hybrydowy, Art design", "src": "Booksy", "uk": "Ідеальна весільна стилізація від пані Ірини, у яку я закохалася з першого погляду :)", "pl": "Idealna stylizacja ślubna od Pani Iryny, w której zakochałam się od pierwszego wejrzenia :)"}, {"n": "Anna Z.", "d": "2 місяці тому", "svc": "Przedłużanie rzęs", "src": "Google", "uk": "Нарощення вій виконано дуже акуратно, вії виглядають ідеально та підкреслюють погляд.", "pl": "Przedłużenie rzęs wykonane bardzo starannie, rzęsy wyglądają idealnie i podkreślają spojrzenie."}, {"n": "Марія", "d": "10 вересня 2026", "svc": "Manicure hybrydowy", "src": "Booksy", "uk": "Дуже приємна і хороша майстриня Анна :) Якісно та швидко!", "pl": "Bardzo miła i dobra mistrzyni Anna :) Jakościowo i szybko!"}, {"n": "Mia", "d": "23 вересня 2026", "svc": "Manicure hybrydowy", "src": "Booksy", "uk": "Дякую за гарні нігті й кавусю ♥", "pl": "Dziękuję za piękne paznokcie i kawkę ♥"}, {"n": "Olesya", "d": "27 вересня 2026", "svc": "Pedicure podologiczny", "src": "Booksy", "uk": "Я дуже задоволена! Пані Ірина дуже мила. Процедура виконана делікатно, ефективно й досить швидко.", "pl": "Jestem mega zadowolona! Pani Iryna jest bardzo miła. Zabieg wykonywany delikatnie, skutecznie i dość szybko."}];
 const HRS=[[540, 1260], [540, 1260], [540, 1260], [540, 1260], [540, 1260], [540, 1260], [540, 1260]];
 const DAYS=[{"uk": "Понеділок", "pl": "Poniedziałek"}, {"uk": "Вівторок", "pl": "Wtorek"}, {"uk": "Середа", "pl": "Środa"}, {"uk": "Четвер", "pl": "Czwartek"}, {"uk": "Пʼятниця", "pl": "Piątek"}, {"uk": "Субота", "pl": "Sobota"}, {"uk": "Неділя", "pl": "Niedziela"}];
 const MARQ=[{"uk": "Манікюр", "pl": "Manicure"}, {"uk": "Педикюр", "pl": "Pedicure"}, {"uk": "Нарощення й гель", "pl": "Żel i przedłużanie"}, {"uk": "Брови", "pl": "Brwi"}, {"uk": "Вії", "pl": "Rzęsy"}, {"uk": "Макіяж і зачіски", "pl": "Makijaż i fryzury"}];
+const PORT=[{"s": "t/n1.jpg", "c": "n", "sv": "Manicure hybrydowy", "pr": "178", "t": 120, "from": false}, {"s": "t/n2.jpg", "c": "n", "sv": "Manicure hybrydowy", "pr": "178", "t": 120, "from": false}, {"s": "t/n3.jpg", "c": "n", "sv": "Manicure hybrydowy", "pr": "178", "t": 120, "from": false}, {"s": "t/n4.jpg", "c": "n", "sv": "Manicure hybrydowy", "pr": "178", "t": 120, "from": false}, {"s": "t/n5.jpg", "c": "n", "sv": "Manicure hybrydowy French", "pr": "212", "t": 150, "from": false}, {"s": "t/n6.jpg", "c": "n", "sv": "Manicure hybrydowy French", "pr": "212", "t": 150, "from": false}, {"s": "t/n7.jpg", "c": "n", "sv": "Hard design", "pr": "28", "t": 30, "from": false}, {"s": "t/n8.jpg", "c": "n", "sv": "Hard design", "pr": "28", "t": 30, "from": false}, {"s": "t/n9.jpg", "c": "n", "sv": "Easy design", "pr": "23", "t": 15, "from": false}, {"s": "t/n10.jpg", "c": "n", "sv": "Przedłużanie paznokci L", "pr": "278", "t": 180, "from": false}, {"s": "t/p1.jpg", "c": "p", "sv": "Pedicure hybrydowy", "pr": "200", "t": 120, "from": false}, {"s": "t/p2.jpg", "c": "p", "sv": "Pedicure hybrydowy", "pr": "200", "t": 120, "from": false}, {"s": "t/p3.jpg", "c": "p", "sv": "Pedicure hybrydowy", "pr": "200", "t": 120, "from": false}, {"s": "t/b1.jpg", "c": "b", "sv": "Laminacja Brwi + regulacja + botoks", "pr": "156", "t": 70, "from": false}, {"s": "t/l1.jpg", "c": "b", "sv": "Laminacja rzęs", "pr": "167", "t": 80, "from": false}, {"s": "t/l2.jpg", "c": "b", "sv": "Przedłużanie rzęs 2:1", "pr": "200", "t": 135, "from": false}, {"s": "t/l3.jpg", "c": "b", "sv": "Przedłużanie rzęs 3:1", "pr": "223", "t": 150, "from": false}, {"s": "t/l4.jpg", "c": "b", "sv": "Laminacja rzęs + farbowanie", "pr": "189", "t": 90, "from": false}, {"s": "t/m1.jpg", "c": "h", "sv": "Farbowanie + regulacja brwi", "pr": "100", "t": 50, "from": false}, {"s": "t/h1.jpg", "c": "h"}];        // [{s,c}]
+const CLIENT=["t/c1.jpg", "t/c2.jpg", "t/c3.jpg", "t/c4.jpg", "t/c5.jpg", "t/c6.jpg", "t/c7.jpg", "t/c8.jpg", "t/c9.jpg"];    // [src]
+const REEL=["t/n7.jpg", "t/n1.jpg", "t/l1.jpg", "t/n3.jpg", "t/p2.jpg", "t/n9.jpg", "t/l3.jpg", "t/n5.jpg", "t/n10.jpg"];
+const POP=[{"sv": "Manicure hybrydowy", "pr": "178", "t": 120, "from": false, "ph": "t/n3.jpg"}, {"sv": "Uzupełnienie żelowe paznokci S", "pr": "212", "t": 120, "from": false, "ph": "t/n10.jpg"}, {"sv": "Pedicure hybrydowy", "pr": "200", "t": 120, "from": false, "ph": "t/p2.jpg"}];
+const FAQ=[{"q": {"uk": "Як записатися?", "pl": "Jak się umówić?"}, "a": {"uk": "Онлайн через Booksy (кнопка «Записатися онлайн») або за телефоном +48 732 687 181.", "pl": "Online przez Booksy (przycisk „Umów wizytę online”) lub telefonicznie: +48 732 687 181."}}, {"q": {"uk": "Коли ви працюєте?", "pl": "Kiedy pracujecie?"}, "a": {"uk": "Щодня з 9:00 до 21:00.", "pl": "Codziennie w godzinach 9:00–21:00."}}, {"q": {"uk": "Чи можна оплатити карткою?", "pl": "Czy można płacić kartą?"}, "a": {"uk": "Так, салон приймає платіжні картки (за даними Booksy).", "pl": "Tak, salon akceptuje karty płatnicze (wg Booksy)."}}, {"q": {"uk": "Чи є паркінг, Wi-Fi і програма лояльності?", "pl": "Czy jest parking, Wi-Fi i program lojalnościowy?"}, "a": {"uk": "Так: паркінг, безкоштовний Wi-Fi і програма лояльності (за даними Booksy).", "pl": "Tak: parking, Wi-Fi i program lojalnościowy (wg Booksy)."}}, {"q": {"uk": "Чи можна прийти з дитиною?", "pl": "Czy można przyjść z dzieckiem?"}, "a": {"uk": "Так, салон дружній до дітей. Є дитячий манікюр (45 zł, 20 хв).", "pl": "Tak, salon jest przyjazny dzieciom. Jest manicure dziecięcy (45 zł, 20 min)."}}, {"q": {"uk": "Чи є ваші послуги для чоловіків?", "pl": "Czy macie usługi dla mężczyzn?"}, "a": {"uk": "Так: чоловічий манікюр і педикюр, а також депіляція обличчя.", "pl": "Tak: manicure i pedicure męski oraz depilacja twarzy."}}];
+const TIPS=[{"min": 2, "t": {"uk": "Як довше зберегти гібридний манікюр", "pl": "Jak dłużej zachować manicure hybrydowy"}, "d": {"uk": "Прості звички, які подовжують життя покриття.", "pl": "Proste nawyki, które wydłużają trwałość."}, "b": {"uk": ["Не користуйтесь нігтями як інструментом: відкривати банки чи зішкрібати наліпки.", "Надягайте рукавички при прибиранні й миття посуду.", "Щодня зволожуйте кутикулу олією.", "Плануйте корекцію зазвичай за 3–4 тижні, до відростання."], "pl": ["Nie używaj paznokci jako narzędzi: do otwierania puszek czy zdrapywania naklejek.", "Zakładaj rękawiczki przy sprzątaniu i zmywaniu.", "Codziennie nawilżaj skórki oliwką.", "Zaplanuj uzupełnienie zwykle po 3–4 tygodniach, zanim odrośnie."]}}, {"min": 2, "t": {"uk": "Догляд за віями після нарощення", "pl": "Pielęgnacja rzęs po przedłużaniu"}, "d": {"uk": "Що робити, щоб вії виглядали гарно до наступної корекції.", "pl": "Co robić, by rzęsy ładnie wyglądały do kolejnej korekty."}, "b": {"uk": ["Перші 24 години уникайте води й пари.", "Не тріть очі й не висмикуйте вії.", "Розчісуйте вії чистою щіточкою щодня.", "Корекція в Booksy доступна на 2 або 3 тижні."], "pl": ["Przez pierwsze 24 godziny unikaj wody i pary.", "Nie pocieraj oczu i nie wyrywaj rzęs.", "Codziennie rozczesuj rzęsy czystą szczoteczką.", "Uzupełnienie w Booksy jest dostępne na 2 lub 3 tygodnie."]}}, {"min": 2, "t": {"uk": "Педикюр: що робити між візитами", "pl": "Pedicure: co robić między wizytami"}, "d": {"uk": "Догляд, який зберігає ефект і комфорт.", "pl": "Pielęgnacja, która utrzymuje efekt i komfort."}, "b": {"uk": ["Щодня наносьте крем на стопи.", "Обирайте зручне взуття за розміром.", "Не зрізайте мозолі самостійно: є подологічні процедури.", "Якщо щось турбує, запишіться на консультацію подолога."], "pl": ["Codziennie stosuj krem na stopy.", "Wybieraj wygodne obuwie w dobrym rozmiarze.", "Nie wycinaj modzeli samodzielnie: są zabiegi podologiczne.", "Jeśli coś niepokoi, umów konsultację podologiczną."]}}];
+const PERMD=[];
+const FORM_ENDPOINT="";   // Formspree / Web3Forms URL goes here          // [{q:{uk,pl},a:{uk,pl}}]
 const BOOK="https://booksy.com/pl-pl/182394_taina-nails-beauty_salon-kosmetyczny_8820_krakow";
-let LANG='uk',cat=0,expanded=false;
+let LANG='uk',cat=0,expanded=false,fil='all';
 const $=(s)=>document.querySelector(s);
 const fmtT=(m)=>{const h=Math.floor(m/60),mm=m%60;return ((h?h+(LANG==='pl'?' godz. ':' год '):'')+(mm?mm+' '+(LANG==='pl'?'min':'хв'):'')).trim()};
-function drawH1(){const w=T[LANG].h1.split(' ');$('#h1').innerHTML=w.map((x,i)=>`<span class="w"><i style="--i:${i}">${x}</i></span> `).join('')}
+let mfTw=null;
+function drawMf(){
+ const el=$('#mf-t');if(!el)return;
+ el.innerHTML=TX[LANG].mf.split(' ').map(w=>`<span class="wd">${w}</span>`).join(' ');
+ if(mfTw){mfTw.scrollTrigger&&mfTw.scrollTrigger.kill();mfTw.kill();mfTw=null}
+ if(window.gsap&&window.ScrollTrigger&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  mfTw=gsap.to(el.querySelectorAll('.wd'),{color:getComputedStyle(document.documentElement).getPropertyValue('--ink').trim(),stagger:.12,ease:'none',scrollTrigger:{trigger:'#mf',start:'top 78%',end:'bottom 55%',scrub:.6}});
+ }else el.querySelectorAll('.wd').forEach(w=>w.style.color='var(--ink)');
+}
+
+function pluralN(n,f){const m10=n%10,m100=n%100;return n+' '+((m10===1&&m100!==11)?f[0]:(m10>=2&&m10<=4&&(m100<10||m100>=20))?f[1]:f[2])}
+function drawCats(){
+ const g=$('#cg');if(!g)return;
+ g.innerHTML=CATS.map((c,i)=>{
+  const ps=c.items.map(x=>parseFloat(String(x.p).replace(',','.'))).filter(x=>!isNaN(x));const mn=ps.length?Math.min(...ps):0;
+  const ph=(c.ph||[])[0];
+  const meta=`${pluralN(c.items.length,TX[LANG].sv_w)} · ${LANG==='pl'?'od':'від'} ${String(mn).replace('.',',')} zł`;
+  return `<button type="button" class="ct${ph?'':' nophoto'}" data-i="${i}">${ph?`<img src="img/${ph}" alt="" loading="lazy">`:`<span class="big">${String(i+1).padStart(2,'0')}</span>`}<span class="nm">${String(i+1).padStart(2,'0')}</span><span class="go">&#8594;</span><div><h3>${c[LANG]}</h3><div class="meta">${meta}</div></div></button>`}).join('');
+ g.querySelectorAll('.ct').forEach(b=>b.onclick=()=>{cat=+b.dataset.i;expanded=false;drawTabs();drawMenu();const t=$('#services');if(window.__lenis)window.__lenis.scrollTo(t,{offset:-70,duration:1.3});else t.scrollIntoView({behavior:'smooth'})});
+}
+function drawH1(){const w=TX[LANG].h1.split(' ');$('#h1').innerHTML=w.map((x,i)=>`<span class="w"><i style="--i:${i}">${i===w.length-1&&w.length>1?'<em>'+x+'</em>':x}</i></span> `).join('')}
 function setLang(l){
  LANG=l;document.documentElement.lang=l;document.documentElement.dataset.lang=l;
- document.querySelectorAll('[data-t]').forEach(e=>{const v=T[l][e.dataset.t];if(v!==undefined)e.textContent=v});
+ document.querySelectorAll('[data-t]').forEach(e=>{const v=TX[l][e.dataset.t];if(v!==undefined)e.textContent=v});
  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));
- drawH1();drawTabs();drawMenu();drawRev();drawHours();drawOpen();drawTrack();
+ drawH1();drawMf();drawCats();drawTabs();drawMenu();drawPort();drawCaps();drawTips();drawForm();drawPerm();drawRev();drawFaq();drawHours();drawOpen();drawTrack();
  try{localStorage.setItem('lang',l)}catch(e){}
 }
 function drawTabs(){const t=$('#tabs');t.innerHTML='';CATS.forEach((c,i)=>{const b=document.createElement('button');b.className='tab';b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-selected',i===cat);b.textContent=c[LANG];b.onclick=()=>{cat=i;expanded=false;drawTabs();drawMenu()};t.appendChild(b)})}
 function drawMenu(){
  const items=CATS[cat].items,show=expanded?items:items.slice(0,7),m=$('#menu');
- m.innerHTML=show.map(x=>`<a class="row" href="${BOOK}" target="_blank" rel="noopener"><span class="n">${x.n}</span><span class="d">${fmtT(x.t)}</span><span class="p">${x.from?(LANG==='pl'?'od ':'від '):''}${x.p} zł</span></a>`).join('');
- if(items.length>7){const b=document.createElement('button');b.className='btn more';b.type='button';b.textContent=expanded?T[LANG].less:T[LANG].more.replace('{n}',items.length);b.onclick=()=>{expanded=!expanded;drawMenu()};m.appendChild(b)}
+ m.innerHTML=show.map(x=>`<a class="row" href="${BOOK}" target="_blank" rel="noopener" data-sv><span class="n">${x.n}</span><span class="d">${fmtT(x.t)}</span><span class="p">${x.from?(LANG==='pl'?'od ':'від '):''}${x.p} zł</span></a>`).join('');
+ m.querySelectorAll('.row').forEach((r,k)=>r.onclick=e=>{e.preventDefault();openSheet(show[k])});
+ if(items.length>7){const b=document.createElement('button');b.className='btn more';b.type='button';b.textContent=expanded?TX[LANG].less:TX[LANG].more.replace('{n}',items.length);b.onclick=()=>{expanded=!expanded;drawMenu()};m.appendChild(b)}
+ const ph=CATS[cat].ph||[];$('#sph').innerHTML=ph.map(s=>`<img src="img/${s}" alt="" loading="lazy">`).join('');$('#sph').style.display=ph.length?'grid':'none';
 }
-function drawRev(){$('#rvs').innerHTML=REV.map(r=>`<figure class="rv"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><q>${(LANG==='pl'&&r.pl)?r.pl:(r.uk||r.pl)}</q><figcaption class="who"><span><b>${r.n}</b>${r.svc?'<br>'+r.svc:''}</span><span>${r.src}</span></figcaption></figure>`).join('')}
+function visiblePort(){return fil==='all'?PORT:PORT.filter(p=>p.c===fil)}
+let portBuilt=false;
+function drawPort(){
+ const cats=[['all',TX[LANG].all],...Object.entries(TX[LANG].pc)];
+ $('#fil').innerHTML=cats.map(([k,v])=>`<button type="button" class="tab" aria-selected="${k===fil}" data-k="${k}">${v}</button>`).join('');
+ $('#fil').querySelectorAll('button').forEach(b=>b.onclick=()=>setFilter(b.dataset.k));
+ if(portBuilt)return;
+ portBuilt=true;
+ const SP=[[2,2],[2,1],[1,1],[1,2],[1,1],[2,1],[2,2],[1,1],[1,1],[1,2],[2,1],[1,1]];
+ $('#mas').innerHTML=PORT.map((p,i)=>{const sp=SP[i%SP.length];return `<button type="button" data-s="${p.s}" data-c="${p.c}" style="--w:${sp[0]};--h:${sp[1]}" aria-label="Open"><img src="img/${p.s}" alt="" decoding="async"><span class="cap"><b></b><i></i><u></u></span></button>`}).join('');
+ if(window.gsap&&!matchMedia('(prefers-reduced-motion:reduce)').matches)gsap.set('#mas button',{opacity:0,y:70});
+ $('#mas').querySelectorAll('button').forEach(b=>b.onclick=()=>openLb(visiblePort().findIndex(p=>p.s===b.dataset.s)));
+}
+function priceTxt(p){return p&&p.sv?`${p.from?(LANG==='pl'?'od ':'від '):''}${p.pr} zł${p.t?' · '+fmtT(p.t):''}`:''}
+function drawCaps(){
+ document.querySelectorAll('#mas button').forEach(b=>{const p=PORT.find(x=>x.s===b.dataset.s);if(!p)return;const c=b.querySelector('.cap');c.querySelector('b').textContent=p.sv||'';c.querySelector('i').textContent=priceTxt(p);c.querySelector('u').textContent=p.sv?TX[LANG].lb_book:''});
+ const pr=$('#pop');if(pr)pr.innerHTML=POP.map((x,k)=>`<a class="pc" href="${BOOK}" target="_blank" rel="noopener"><img src="img/${x.ph}" alt="" loading="lazy"><div><small>${TX[LANG].pop_t}</small><b>${x.sv}</b><span>${x.from?(LANG==='pl'?'od ':'від '):''}${x.pr} zł<em></em>· ${fmtT(x.t)}</span></div></a>`).join('');pr.querySelectorAll('.pc').forEach((a,k)=>a.onclick=e=>{e.preventDefault();openSheet(POP[k])})}
+
+function lbSet(i){const p=visiblePort()[i];$('#lbi').src='img/'+p.s;$('#lbt').textContent=p.sv||'';$('#lbs').textContent=priceTxt(p);const a=$('#lba');a.href=BOOK;a.textContent=TX[LANG].lb_book;a.onclick=e=>{e.preventDefault();$('#lb').classList.remove('on');openSheet(p)};$('#lbc').style.display=p.sv?'flex':'none'}
+function setFilter(k){
+ fil=k;
+ $('#fil').querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',b.dataset.k===k));
+ const items=[...$('#mas').children],apply=()=>items.forEach(b=>b.classList.toggle('gone',!(k==='all'||b.dataset.c===k)));
+ if(window.gsap&&window.Flip&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  const st=Flip.getState(items);apply();
+  Flip.from(st,{duration:.7,ease:'power2.inOut',absolute:false,scale:false,nested:false,
+   onComplete:()=>gsap.set(items,{clearProps:'opacity,scale,transform'}),
+   onEnter:e=>gsap.fromTo(e,{opacity:0,scale:.85},{opacity:1,scale:1,duration:.6}),
+   onLeave:e=>gsap.to(e,{opacity:0,scale:.85,duration:.4})});
+ }else apply();
+}
+let lbI=0;
+function openLb(i){lbI=i;lbSet(i);$('#lb').classList.add('on')}
+function stepLb(d){const n=visiblePort().length;lbI=(lbI+d+n)%n;lbSet(lbI)}
+$('#lb').onclick=e=>{if(e.target.id==='lb'||e.target.classList.contains('x'))$('#lb').classList.remove('on')};
+$('#lb .pv').onclick=()=>stepLb(-1);$('#lb .nx').onclick=()=>stepLb(1);
+addEventListener('keydown',e=>{if(!$('#lb').classList.contains('on'))return;if(e.key==='Escape')$('#lb').classList.remove('on');if(e.key==='ArrowLeft')stepLb(-1);if(e.key==='ArrowRight')stepLb(1)});
+function drawRev(){$('#rvs').innerHTML=REV.map(r=>`<figure class="rv"><div class="top">${r.a?`<img class="a" src="img/${r.a}" alt="">`:`<span class="a">${r.n[0]}</span>`}<div><b>${r.n}</b><small>${r.svc||''}</small></div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><q>${(LANG==='pl'&&r.pl)?r.pl:(r.uk||r.pl)}</q><figcaption class="who"><span>${r.d||''}</span><span>${r.src}</span></figcaption></figure>`).join('')}
+function drawFaq(){$('#faq-l').innerHTML=FAQ.map(f=>`<details><summary>${f.q[LANG]}</summary><p>${f.a[LANG]}</p></details>`).join('')}
 function warsawNow(){const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Warsaw',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).reduce((a,x)=>(a[x.type]=x.value,a),{});const wd=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].indexOf(p.weekday);return {wd,min:(+p.hour%24)*60+(+p.minute)}}
 const hh=(m)=>String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
 function drawOpen(){const {wd,min}=warsawNow(),[o,c]=HRS[wd],open=min>=o&&min<c;$('#dot').className='dot'+(open?'':' off');
- if(open)$('#open').textContent=T[LANG].open_now.replace('{t}',hh(c));
- else{let n=(wd+1)%7;if(min<o)n=wd;$('#open').textContent=T[LANG].closed.replace('{d}',n===wd?(LANG==='pl'?'dziś':'сьогодні'):DAYS[n][LANG]).replace('{t}',hh(HRS[n][0]))}}
+ if(open)$('#open').textContent=TX[LANG].open_now.replace('{t}',hh(c));
+ else{let n=(wd+1)%7;if(min<o)n=wd;$('#open').textContent=TX[LANG].closed.replace('{d}',n===wd?(LANG==='pl'?'dziś':'сьогодні'):DAYS[n][LANG]).replace('{t}',hh(HRS[n][0]))}}
 function drawHours(){const {wd}=warsawNow();$('#hours').innerHTML=DAYS.map((d,i)=>`<tr class="${i===wd?'today':''}"><td>${d[LANG]}</td><td>${hh(HRS[i][0])}&ndash;${hh(HRS[i][1])}</td></tr>`).join('')}
 function drawTrack(){const w=MARQ.map(x=>x[LANG]);let a=[];for(let i=0;i<8;i++)a=a.concat(w);$('#track').innerHTML=a.map(x=>`<span>${x}</span>`).join('')}
 document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
 let l0='uk';try{l0=localStorage.getItem('lang')||(navigator.language.startsWith('pl')?'pl':'uk')}catch(e){}
 $('#y').textContent=new Date().getFullYear();
+$('#cph').innerHTML=[...CLIENT,...CLIENT].map(s=>`<img src="img/${s}" alt="" loading="lazy">`).join('');
 setLang(l0);setInterval(drawOpen,60000);
+
+// ===== v10: sheet, tips, form, compare, fab =====
+function svcInfo(o){return {n:o.n||o.sv,p:o.p||o.pr,t:o.t,from:o.from}}
+function openSheet(o){
+ if(!o)return;const v=svcInfo(o);
+ $('#shn').textContent=v.n;$('#shn2').textContent=v.n;
+ $('#shp').textContent=(v.from?(LANG==='pl'?'od ':'від '):'')+v.p+' zł';$('#sht').textContent=v.t?'· '+fmtT(v.t):'';
+ const cp=$('#shcp');cp.textContent=TX[LANG].sh_copy;cp.onclick=()=>{try{navigator.clipboard.writeText(v.n)}catch(e){}cp.textContent=TX[LANG].sh_copied};
+ $('#sheetbg').classList.add('on');if(window.__lenis)window.__lenis.stop();
+}
+function closeSheet(){$('#sheetbg').classList.remove('on');if(window.__lenis)window.__lenis.start()}
+$('#shx').onclick=closeSheet;$('#sheetbg').onclick=e=>{if(e.target.id==='sheetbg')closeSheet()};
+addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+$('#shgo').addEventListener('click',()=>setTimeout(closeSheet,300));
+function drawPerm(){
+ const g=$('#pmg');if(!g)return;
+ g.innerHTML=PERMD.map(x=>`<div class="tc rev in"><small>${TX[LANG][x.k==='lips'?'pm_lips':'pm_brows']}</small><h3>${x.n}</h3><div class="mt"><b>${x.p} zł</b><span>${fmtT(x.t)}</span></div></div>`).join('');
+}
+function drawTips(){
+ $('#tipl').innerHTML=TIPS.map((t,i)=>`<article class="tip" data-i="${i}"><div class="th"><small>${t.min} ${LANG==='pl'?'min czytania':'хв читання'}</small><h3>${t.t[LANG]}</h3><p>${t.d[LANG]}</p><span class="mr">${TX[LANG].tp_more} +</span></div><ul class="tb">${t.b[LANG].map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('');
+ $('#tipl').querySelectorAll('.tip').forEach(a=>a.onclick=()=>a.classList.toggle('open'));
+}
+function drawForm(){
+ const sel=$('#rq-s');if(!sel)return;const cur=sel.value;
+ sel.innerHTML=`<option value="">${TX[LANG].fm_any}</option>`+CATS.map(c=>`<optgroup label="${c[LANG]}">${c.items.slice(0,40).map(x=>`<option>${x.n}</option>`).join('')}</optgroup>`).join('');sel.value=cur;
+}
+$('#rqf').addEventListener('submit',async e=>{
+ e.preventDefault();const f=e.target,ok=$('#rq-ok');ok.style.display='block';
+ if(f.website.value){return}
+ if(!f.name.value.trim()||!f.phone.value.trim()||!f.agree.checked){ok.textContent=TX[LANG].fm_err;return}
+ if(FORM_ENDPOINT){try{const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});ok.textContent=r.ok?TX[LANG].fm_ok:TX[LANG].fm_err;if(r.ok)f.reset()}catch(x){ok.textContent=TX[LANG].fm_err}}
+ else{ok.textContent=TX[LANG].fm_demo.replace('{n}',f.name.value.trim())}
+});
+const cr=$('#cmp-r'),cm=$('#cmp');if(cr)cr.addEventListener('input',()=>cm.style.setProperty('--p',cr.value+'%'));
+const fab=$('#fab'),heroEl=document.querySelector('.hero');
+new IntersectionObserver(es=>es.forEach(e=>fab.classList.toggle('on',!e.isIntersecting)),{threshold:0}).observe(heroEl);
+
 const rv=$('#rvs');$('#prev').onclick=()=>rv.scrollBy({left:-360,behavior:'smooth'});$('#next').onclick=()=>rv.scrollBy({left:360,behavior:'smooth'});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rev').forEach(e=>io.observe(e));
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.count;cio.unobserve(el);const t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/1400),k=1-Math.pow(1-p,3);el.textContent=Math.round(to*k);if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(e=>cio.observe(e));
 const pr=$('#progress');function onS(){const h=document.documentElement;pr.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight||1))+')'}addEventListener('scroll',onS,{passive:true});onS();
 if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&matchMedia('(pointer:fine)').matches){document.querySelectorAll('.btn.primary').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.12)+'px,'+((e.clientY-r.top-r.height/2)*.2)+'px)'});b.addEventListener('pointerleave',()=>{b.style.transform=''})})}
+
+// ===== GSAP features =====
+(function(){
+ const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches,fine=matchMedia('(pointer:fine)').matches;
+ // 1) pinned horizontal reel
+ const trk=document.getElementById('trk');
+ trk.innerHTML=REEL.map(s=>`<figure><img src="img/${s}" alt="" decoding="async"></figure>`).join('');
+ if(window.gsap&&window.ScrollTrigger&&!reduced&&innerWidth>900){
+  gsap.registerPlugin(ScrollTrigger);
+  const dist=()=>Math.max(0,trk.scrollWidth-innerWidth+60);
+  const tw=gsap.to(trk,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:'#reel',start:'top top',end:()=>'+='+(dist()+200),pin:true,scrub:.7,invalidateOnRefresh:true,anticipatePin:1}});
+  trk.querySelectorAll('img').forEach(img=>gsap.fromTo(img,{scale:1.18},{scale:1,ease:'none',scrollTrigger:{trigger:img.parentElement,containerAnimation:tw,start:'left 95%',end:'right 5%',scrub:true}}));
+ }
+ // 3) 3D tilt for team cards
+ if(window.gsap&&fine&&!reduced){
+  document.querySelectorAll('.m').forEach(c=>{
+   c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;gsap.to(c,{rotationY:x*14,rotationX:-y*14,transformPerspective:800,duration:.5,ease:'power2.out',overwrite:'auto'})});
+   c.addEventListener('pointerleave',()=>gsap.to(c,{rotationY:0,rotationX:0,duration:.7,ease:'elastic.out(1,.6)',overwrite:'auto'}));
+  });
+ }
+ // 4) section headings: line reveal on scroll
+ if(window.gsap&&window.ScrollTrigger&&!reduced){
+  gsap.utils.toArray('section h2').forEach(h=>{if(h.closest('.reel'))return;gsap.from(h,{y:40,opacity:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:h,start:'top 88%',once:true}})});
+ }
+})();
+
+// ===== v6: richer motion =====
+(function(){
+ const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches,fine=matchMedia('(pointer:fine)').matches;
+ if(!window.gsap||!window.ScrollTrigger||reduced)return;
+ gsap.registerPlugin(ScrollTrigger);
+ // smooth inertia scroll
+ let lenis=null;
+ if(window.Lenis){
+  lenis=new Lenis({duration:1.15,smoothWheel:true});window.__lenis=lenis;
+  lenis.on('scroll',ScrollTrigger.update);
+  gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length<2)return;const t=document.querySelector(id);if(!t)return;e.preventDefault();lenis.scrollTo(t,{offset:-70,duration:1.4})}));
+ }
+ // hero parallax
+ gsap.to('.hc-a img',{yPercent:10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ gsap.to('.hc-b',{y:-70,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ gsap.to('.hc-c',{y:-130,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ if(fine){const hs=document.querySelector('.hero');const L=[...document.querySelectorAll('.hc .ph')].map(el=>({el,f:+el.dataset.d,x:gsap.quickTo(el,'x',{duration:.9,ease:'power3'}),y:gsap.quickTo(el,'y',{duration:.9,ease:'power3'})}));hs.addEventListener('pointermove',e=>{const r=hs.getBoundingClientRect(),nx=(e.clientX-r.left)/r.width-.5,ny=(e.clientY-r.top)/r.height-.5;L.forEach(o=>{o.x(nx*o.f);o.y(ny*o.f)})})}
+ gsap.to('.hero .decor',{y:-90,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ gsap.to('.hero .wrap > div:first-child',{y:-40,opacity:.35,ease:'none',scrollTrigger:{trigger:'.hero',start:'30% top',end:'bottom top',scrub:true}});
+ // about: collage drifts, points slide in
+ document.querySelectorAll('.pt,.m').forEach(e=>e.classList.remove('rev'));
+ gsap.utils.toArray('.pol').forEach((p,i)=>{
+  gsap.to(p,{y:(i%2?-1:1)*38,ease:'none',scrollTrigger:{trigger:'.about',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.to(p,{rotation:()=>(i%2?4:-4)+(i*2),duration:3+i,ease:'sine.inOut',yoyo:true,repeat:-1});
+ });
+ gsap.from('.pt',{x:70,opacity:0,stagger:.16,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.pts',start:'top 82%',once:true}});
+ // cinematic reveals for photos / cards
+ ScrollTrigger.batch('.mas button',{start:'top 94%',once:true,onEnter:b=>gsap.fromTo(b,{y:70,opacity:0,clipPath:'inset(22% 22% 22% 22% round 26px)'},{y:0,opacity:1,clipPath:'inset(0% 0% 0% 0% round 20px)',stagger:.07,duration:1,ease:'power3.out',overwrite:true,clearProps:'opacity'})});
+ ScrollTrigger.batch('.m',{start:'top 92%',once:true,onEnter:b=>gsap.fromTo(b,{y:80,opacity:0,rotation:3},{y:0,opacity:1,rotation:0,stagger:.09,duration:.95,ease:'power3.out',overwrite:true})});
+ gsap.set('.ct',{opacity:0,y:70});ScrollTrigger.batch('.ct',{start:'top 92%',once:true,onEnter:b=>gsap.to(b,{y:0,opacity:1,stagger:.1,duration:.95,ease:'power3.out'})});
+ ScrollTrigger.batch('.st-i',{start:'top 92%',once:true,onEnter:b=>gsap.fromTo(b,{y:40,opacity:0},{y:0,opacity:1,stagger:.12,duration:.8,ease:'power3.out'})});
+ gsap.utils.toArray('.cph .tr').forEach(t=>gsap.to(t,{xPercent:-8,ease:'none',scrollTrigger:{trigger:'#clients',start:'top bottom',end:'bottom top',scrub:true}}));
+ gsap.from('.final h2,.final p,.final .btn',{y:50,opacity:0,stagger:.14,duration:.9,ease:'power3.out',scrollTrigger:{trigger:'.final',start:'top 80%',once:true}});
+ // cursor ring
+ if(fine){
+  const cur=document.getElementById('cur'),qx=gsap.quickTo(cur,'x',{duration:.35,ease:'power3'}),qy=gsap.quickTo(cur,'y',{duration:.35,ease:'power3'});
+  addEventListener('pointermove',e=>{cur.classList.add('on');qx(e.clientX);qy(e.clientY)},{passive:true});
+  document.addEventListener('pointerleave',()=>cur.classList.remove('on'));
+  const set=(c,t)=>{cur.className='cur on '+c;cur.textContent=t||''};
+  document.addEventListener('pointerover',e=>{
+   if(e.target.closest('.mas button,.pol,.m,.reel figure')){set('big',e.target.closest('.mas button')?'+':'')}
+   else if(e.target.closest('.btn,.tab,.row,a')){set('btnh')}
+   else{cur.className='cur on';cur.textContent=''}
+  });
+ }
+ ScrollTrigger.refresh();
+})();
 </script>
 </body></html>
