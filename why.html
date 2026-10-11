@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Навіщо салону власний сайт</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f3ee;--bg2:#efe6dc;--ink:#2a1f1a;--mut:#6b5b50;--acc:#a8472a;--line:#dccfbd;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding-inline:24px}
+header{padding:20px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;padding:5px 12px;font-size:13px;color:var(--mut)}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+h1{font:600 clamp(40px,7vw,68px)/1.02 var(--serif);margin:14px 0 16px}
+h2{font:600 clamp(28px,4.4vw,40px)/1.1 var(--serif);margin:0 0 10px}
+section{padding-block:clamp(44px,7vw,80px);border-bottom:1px solid var(--line)}
+.lead{font-size:20px;color:var(--mut);max-width:34em}
+.num{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 10px}
+.n{flex:1 1 180px;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:22px}
+.n b{display:block;font:600 46px/1 var(--serif);color:var(--acc)}
+.n span{font-size:14px;color:var(--mut)}
+.src{font-size:13px;color:var(--mut);margin-top:10px}
+.box{background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:26px;margin-top:20px}
+.calc{display:grid;grid-template-columns:1fr auto;gap:6px 20px;margin-top:10px;font-size:18px}
+.calc div:nth-child(even){text-align:right;font-weight:600}
+.calc .hl{color:var(--acc)}
+ul.ok{list-style:none;padding:0;margin-top:14px;display:grid;gap:10px}
+ul.ok li{padding-left:28px;position:relative}
+ul.ok li::before{content:"";position:absolute;left:0;top:.5em;width:14px;height:8px;border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg)}
+.steps{display:grid;gap:14px;margin-top:18px;counter-reset:s}
+.step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+.step::before{counter-increment:s;content:counter(s);width:44px;height:44px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font:600 22px var(--serif)}
+footer{padding:36px 0 60px;color:var(--mut);font-size:13px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><span class="eyebrow" data-t="brand"></span>
+<div class="lang"><button data-l="uk" aria-pressed="true">UA</button><button data-l="pl" aria-pressed="false">PL</button></div></div></header>
+<main>
+<section><div class="wrap">
+ <div class="eyebrow" data-t="e1"></div>
+ <h1 data-t="h1"></h1>
+ <p class="lead" data-t="lead"></p>
+</div></section>
+
+<section><div class="wrap">
+ <h2 data-t="a_h"></h2><p data-t="a_p"></p>
+ <div class="num">
+  <div class="n"><b>98%</b><span data-t="a_n1"></span></div>
+  <div class="n"><b>87%</b><span data-t="a_n2"></span></div>
+  <div class="n"><b>32%</b><span data-t="a_n3"></span></div>
+ </div>
+ <p class="src" data-t="a_src"></p>
+</div></section>
+
+<section><div class="wrap">
+ <h2 data-t="b_h"></h2><p data-t="b_p"></p>
+ <div class="box"><strong data-t="b_ex"></strong>
+  <div class="calc"><div data-t="b_c1"></div><div>178 zł</div><div data-t="b_c2"></div><div class="hl">&asymp; 98 zł</div><div data-t="b_c3"></div><div>&asymp; 80 zł</div></div>
+  <p class="src" data-t="b_src"></p></div>
+ <p style="margin-top:18px" data-t="b_p2"></p>
+</div></section>
+
+<section><div class="wrap">
+ <h2 data-t="c_h"></h2>
+ <ul class="ok"><li data-t="c1"></li><li data-t="c2"></li><li data-t="c3"></li><li data-t="c4"></li><li data-t="c5"></li></ul>
+</div></section>
+
+<section><div class="wrap">
+ <h2 data-t="d_h"></h2>
+ <div class="steps"><div class="step"><div><b data-t="d1"></b><br><span data-t="d1p"></span></div></div>
+ <div class="step"><div><b data-t="d2"></b><br><span data-t="d2p"></span></div></div>
+ <div class="step"><div><b data-t="d3"></b><br><span data-t="d3p"></span></div></div>
+ <div class="step"><div><b data-t="d4"></b><br><span data-t="d4p"></span></div></div></div>
+</div></section>
+</main>
+<footer><div class="wrap"><span data-t="foot"></span><br>
+Sources: <a href="https://www.brightlocal.com/research/local-consumer-review-survey/2026/" target="_blank" rel="noopener">BrightLocal Local Consumer Review Survey</a> &middot; <a href="https://biz.booksy.com/pl-pl/cennik" target="_blank" rel="noopener">Booksy cennik</a> &middot; <a href="https://biz.booksy.com/pl-pl/blog/booksy-boost-bez-tajemnic" target="_blank" rel="noopener">Booksy Boost</a></div></footer>
+<script>
+const T={
+uk:{brand:"Концепт-пропозиція",e1:"Навіщо це вам",h1:"Ваш сайт: власний канал записів, який не здається в оренду",lead:"Booksy і Instagram дають клієнтів, але ви не володієте ні аудиторією, ні правилами. Сайт це місце, яке належить лише вам і працює на вас у Google 24/7.",
+a_h:"Вас шукають в інтернеті ще до першого візиту",a_p:"Перш ніж записатися, люди дивляться відгуки, ціни та фото. Ось що показало дослідження BrightLocal:",a_n1:"користувачів шукали інформацію про місцеві бізнеси в інтернеті",a_n2:"оцінювали місцеві бізнеси через Google",a_n3:"використовували Instagram для пошуку інформації про бізнес",a_src:"Джерело: BrightLocal Local Consumer Review Survey (дані 2022, споживачі США). Це не польське дослідження, тому сприймайте як орієнтир, а не точну цифру для Польщі.",
+b_h:"Booksy бере комісію за нових клієнтів",b_p:"Якщо у вас увімкнено Booksy Boost, за перший завершений візит нового клієнта з маркетплейсу Booksy утримує 45% нетто (35% при 12-місячній угоді). Якщо ж клієнт записується через ваше безкомісійне посилання, комісії немає.",
+b_ex:"Приклад для послуги за 178 zł (Manicure hybrydowy)",b_c1:"Ціна послуги",b_c2:"Комісія Booksy Boost (45% + VAT)",b_c3:"Вам залишається за перший візит",b_src:"Розрахунок орієнтовний, за прикладом із умов Booksy (200 zł → комісія 110,70 zł). Діє лише за увімкненого Boost і запису через маркетплейс. Перевірте свою ставку в панелі.",
+b_p2:"Власний сайт, який веде клієнта на ваше безкомісійне посилання, дає змогу приймати записи з Google без цієї комісії. Для цього потрібно, щоб ваш сайт з'являвся в пошуку.",
+c_h:"Що входить у сайт",c1:"Дизайн під ваш стиль, швидкий і зручний на телефоні",c2:"Українська й польська мови",c3:"Прайс із вашого Booksy: усі послуги, ціни, тривалість",c4:"Кнопка запису на ваше безкомісійне посилання Booksy, відгуки, години роботи, карта",c5:"Розмітка для Google (години, адреса, рейтинг), щоб вас легше знаходили",
+d_h:"Як це відбувається",d1:"Ви дивитесь демо",d1p:"Ми вже підготували сторінку з вашими даними. Скажіть, що змінити.",d2:"Домовляємося",d2p:"Фіксована ціна, договір, зрозумілий строк.",d3:"Ми налаштовуємо",d3p:"Домен і хостинг оформлюємо на вас. Ви завжди власник.",d4:"Запуск і навчання",d4p:"Передаємо доступи й показуємо, як змінювати ціни та тексти.",
+foot:"Це концепт-пропозиція. Усі дані з ваших публічних сторінок Booksy та Google."},
+pl:{brand:"Propozycja koncepcyjna",e1:"Dlaczego to Wam się opłaca",h1:"Własna strona: kanał rezerwacji, którego nie wynajmujecie",lead:"Booksy i Instagram przyprowadzają klientów, ale nie jesteście właścicielami ani publiczności, ani zasad. Strona to miejsce tylko Wasze, które pracuje na Was w Google 24/7.",
+a_h:"Klienci szukają Was w internecie jeszcze przed pierwszą wizytą",a_p:"Zanim umówią wizytę, patrzą na opinie, ceny i zdjęcia. Oto co pokazało badanie BrightLocal:",a_n1:"konsumentów szukało informacji o lokalnych firmach w internecie",a_n2:"oceniało lokalne firmy przez Google",a_n3:"używało Instagrama do szukania informacji o firmach",a_src:"Źródło: BrightLocal Local Consumer Review Survey (dane z 2022, konsumenci z USA). To nie jest badanie polskie, więc traktujcie to jako wskazówkę, nie dokładną liczbę dla Polski.",
+b_h:"Booksy pobiera prowizję za nowych klientów",b_p:"Jeśli macie włączony Booksy Boost, za pierwszą zakończoną wizytę nowego klienta z marketplace Booksy pobiera 45% netto (35% przy umowie na 12 miesięcy). Gdy klient rezerwuje przez Wasz bezprowizyjny link, prowizji nie ma.",
+b_ex:"Przykład dla usługi za 178 zł (Manicure hybrydowy)",b_c1:"Cena usługi",b_c2:"Prowizja Booksy Boost (45% + VAT)",b_c3:"Zostaje Wam za pierwszą wizytę",b_src:"Obliczenie orientacyjne, wg przykładu z warunków Booksy (200 zł → prowizja 110,70 zł). Dotyczy tylko włączonego Boost i rezerwacji z marketplace. Sprawdźcie swoją stawkę w panelu.",
+b_p2:"Własna strona, która kieruje klienta na Wasz bezprowizyjny link, pozwala przyjmować rezerwacje z Google bez tej prowizji. Warunek: strona musi być widoczna w wyszukiwarce.",
+c_h:"Co obejmuje strona",c1:"Projekt dopasowany do stylu, szybki i wygodny na telefonie",c2:"Język ukraiński i polski",c3:"Cennik z Waszego Booksy: wszystkie usługi, ceny, czas",c4:"Przycisk rezerwacji na Wasz bezprowizyjny link Booksy, opinie, godziny, mapa",c5:"Dane strukturalne dla Google (godziny, adres, ocena), żeby łatwiej Was znaleźć",
+d_h:"Jak to wygląda",d1:"Oglądacie demo",d1p:"Przygotowaliśmy stronę z Waszymi danymi. Powiedzcie, co zmienić.",d2:"Ustalamy warunki",d2p:"Stała cena, umowa, jasny termin.",d3:"My konfigurujemy",d3p:"Domenę i hosting rejestrujemy na Was. Zawsze jesteście właścicielem.",d4:"Start i szkolenie",d4p:"Przekazujemy dostępy i pokazujemy, jak zmieniać ceny i teksty.",
+foot:"To propozycja koncepcyjna. Dane z Waszych publicznych stron Booksy i Google."}};
+function set(l){document.documentElement.lang=l;document.querySelectorAll('[data-t]').forEach(e=>e.textContent=T[l][e.dataset.t]||'');document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));try{localStorage.setItem('l',l)}catch(e){}}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>set(b.dataset.l));
+let l='uk';try{l=localStorage.getItem('l')||(navigator.language.startsWith('pl')?'pl':'uk')}catch(e){}
+set(l);
+</script>
+</body></html>
